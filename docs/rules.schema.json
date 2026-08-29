@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ventry089/warden-desk/blob/main/docs/rules.schema.json",
+  "title": "warden-desk rulebook",
+  "description": "The seven rules of the desk, plus the eighth agent that enforces them. Every threshold the code obeys lives here and nowhere else.",
+  "type": "object",
+  "required": ["version", "desk", "manifest", "money", "rules", "warden"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the rulebook. Bump the minor when a threshold changes, the major when a rule is added or removed."
+    },
+    "desk": { "type": "string" },
+    "manifest": {
+      "type": "string",
+      "description": "One sentence stating how the desk is arranged. Printed at the top of `desk.py rules`."
+    },
+    "money": {
+      "type": "object",
+      "required": ["position_size_usd", "currency"],
+      "additionalProperties": false,
+      "properties": {
+        "position_size_usd": { "type": "number", "exclusiveMinimum": 0 },
+        "currency": { "type": "string", "enum": ["USD"] },
+        "note": { "type": "string" }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "description": "Exactly seven. An eighth entry means a rule was added without an agent to enforce it.",
+      "items": { "$ref": "#/$defs/rule" }
+    },
+    "warden": {
+      "type": "object",
+      "required": ["agent", "title", "asks", "enforces", "override", "exit_liquidity"],
+      "additionalProperties": false,
+      "properties": {
+        "agent": { "const": "WARDEN" },
+        "title": { "type": "string" },
+        "asks": { "type": "string" },
+        "enforces": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^R[1-7]$" },
+          "minItems": 7,
+          "maxItems": 7,
+          "uniqueItems": true
+        },
+        "override": {
+          "const": false,
+          "description": "Not a setting. A desk with an override is a different desk, and this field exists so that change cannot be made quietly."
+        },
+        "exit_liquidity": { "$ref": "#/$defs/exit_liquidity" }
+      }
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["id", "agent", "title", "asks", "params", "denies", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^R[1-7]$" },
+        "agent": {
+          "type": "string",
+          "enum": ["GRAVEYARD", "MIDWIFE", "COLLECTOR", "CLOCK", "TOLL", "LADDER", "UNDERTAKER"]
+        },
+        "title": { "type": "string" },
+        "asks": {
+          "type": "string",
+          "pattern": "\\?$",
+          "description": "The single question the rule answers about an order. It has to end in a question mark - a rule that cannot be phrased as a question is a preference."
+        },
+        "denies": {
+          "type": "string",
+          "description": "What the rule refuses, in the words the operator will read at the moment of refusal."
+        },
+        "params": {
+          "type": "object",
+          "minProperties": 1,
+          "description": "The thresholds. No agent may hard-code a number that belongs here.",
+          "additionalProperties": { "type": ["number", "boolean", "string"] }
+        },
+        "source": {
+          "type": "string",
+          "minLength": 8,
+          "description": "Where the number came from: a post, a measurement, a file. A threshold nobody can trace is a threshold nobody can argue with."
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "exit_liquidity": {
+      "type": "object",
+      "required": [
+        "min_holders",
+        "max_top10_share",
+        "max_silence_days",
+        "min_cap_usd",
+        "verdict_cooldown_hours",
+        "max_open_positions",
+        "source"
+      ],
+      "additionalProperties": false,
+      "description": "WARDEN's own checks. Every one is about the exit, none about the upside.",
+      "properties": {
+        "note": { "type": "string" },
+        "min_holders": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Fewer holders than this means there is nobody on the other side of the trade."
+        },
+        "max_top10_share": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "max_silence_days": { "type": "integer", "minimum": 0 },
+        "min_cap_usd": { "type": "number", "minimum": 0 },
+        "verdict_cooldown_hours": { "type": "number", "minimum": 0 },
+        "max_open_positions": { "type": "integer", "minimum": 1 },
+        "source": { "type": "string", "minLength": 8 }
+      }
+    }
+  }
+}
