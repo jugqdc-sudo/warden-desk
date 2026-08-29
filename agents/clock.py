@@ -1,8 +1,8 @@
 """CLOCK [R4] - keeps the sell button locked for five minutes.
 
-The lock is not aimed at the market. It is aimed at the hand on the button: the
-measured median holding time on this desk was forty two seconds, and almost
-every one of those exits was early rather than late.
+The lock is not aimed at the market. It is aimed at the hand on the button:
+manual exits cluster in the first seconds of a position, and a position closed
+that fast was never given the chance to be right or wrong.
 
 The only thing that opens the lock before the timer is the stop.
 
