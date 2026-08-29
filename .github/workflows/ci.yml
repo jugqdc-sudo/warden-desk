@@ -1,28 +1,53 @@
-# secrets - never, under any circumstance
-.env
-.env.*
-!.env.example
-*.key
-*.pem
-id_*.json
-wallet*.json
-keypair*.json
+name: ci
 
-# runtime output
-data/candles/
-data/refusals.jsonl
-data/catch.local.jsonl
-*.log
-*.pid
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 
-# python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
+jobs:
+  test:
+    name: python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
 
-# os
-.DS_Store
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: install
+        run: pip install -e ".[dev]"
+
+      - name: tests
+        run: python -m pytest
+
+      - name: runs offline, no keys
+        run: |
+          python desk.py rules
+          python desk.py index
+          python desk.py warden --no-save
+          python desk.py midwife --top 3
+          python desk.py clock --held 42 --pnl -4 || test $? -eq 1
+          python desk.py ladder --pnl -8 || test $? -eq 1
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - name: ruff
+        run: ruff check .
+      - name: rulebook matches its schema
+        run: python -m tests.check_schema
