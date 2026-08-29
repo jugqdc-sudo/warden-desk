@@ -77,7 +77,7 @@
         },
         "denies": {
           "type": "string",
-          "description": "What the rule refuses, in the words the operator will read at the moment of refusal."
+          "description": "What the rule refuses, in the words a reader will see at the moment of refusal."
         },
         "params": {
           "type": "object",

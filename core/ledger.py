@@ -1,6 +1,6 @@
 """Positions and orders the desk reasons about. Nothing here signs anything.
 
-A Position is what an operator claims to be holding; an Order is what they
+A Position is what a caller claims to be holding; an Order is what they
 are about to do. Both are plain data, so the same objects work for a paper
 run, for a replay of a recorded session, and for a real desk whose execution
 layer lives outside this repository.

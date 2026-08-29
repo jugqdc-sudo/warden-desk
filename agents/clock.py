@@ -1,6 +1,6 @@
 """CLOCK [R4] - keeps the sell button locked for five minutes.
 
-The lock is not aimed at the market. It is aimed at the operator: the
+The lock is not aimed at the market. It is aimed at the hand on the button: the
 measured median holding time on this desk was forty two seconds, and almost
 every one of those exits was early rather than late.
 
@@ -65,7 +65,7 @@ class Clock(Agent):
             asks=self.rule.asks,
             bench=f"locked for [bold]{lock}s[/] · only the "
             f"{self.rule['stop_loss_pct']:.0f}% stop opens it early",
-            footer="aimed at the operator, not at the market",
+            footer="aimed at the hand on the button, not at the market",
         )
 
         position = Position(

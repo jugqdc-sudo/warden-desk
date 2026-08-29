@@ -3,7 +3,7 @@
 A position on this desk is opened for one stated reason: a wave is being
 manufactured on a name and the original is cheap. That reason has a shelf
 life of six hours. When the timer runs out the position closes at market,
-whatever the chart is doing and whatever the operator now believes.
+whatever the chart is doing and whatever anyone now believes.
 
 CLOCK stops an exit that is too early. UNDERTAKER stops one that never comes.
 

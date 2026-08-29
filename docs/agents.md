@@ -162,16 +162,16 @@ COLLECTOR  the original, never the clone · refuses anything more than 0% off th
 Forty nine copies of the name; the original is 865 days old, $3,045 cap, no
 trade in 407 days. That is the whole thesis in four numbers.
 
-Chasing is the operator's instinct, not the desk's - so `max_move_pct_since_wave`
+Chasing is a human instinct, not a desk's - so `max_move_pct_since_wave`
 is `0.0`. If it already ran, it is not a candidate.
 
 ---
 
 ## R4 · CLOCK - keeps the sell button locked
 
-This rule is aimed at the operator, not at the market. The measured median
-holding time on this desk was **42 seconds**, and almost every one of those
-exits was early rather than late.
+This rule is aimed at the hand on the button, not at the market. Manual exits
+cluster in the first seconds of a position, and a position closed that fast was
+never given the chance to be right or wrong.
 
 Five minutes, locked. The only thing that opens it early is the stop.
 
@@ -289,7 +289,7 @@ python3 desk.py ladder --pnl 12      # CLEARED, next rung $25.00
 A position here is opened for one stated reason: a wave is being manufactured
 on a name and the original is cheap. That reason has a shelf life of six
 hours. When the timer runs out the position closes at market - not when the
-chart looks better, not when the operator has a feeling.
+chart looks better, not when someone has a feeling.
 
 CLOCK stops an exit that comes too early. UNDERTAKER stops one that never
 comes.

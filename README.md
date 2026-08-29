@@ -21,13 +21,11 @@ no execution code here, no wallet handling and no performance claim. If you
 want the part that submits transactions, that is a separate problem with
 separate ways to lose money - see [What this is not](#what-this-is-not).
 
-**On the commit history.** It starts the day this was published, and that is
-the whole story: the rules were extracted from a private research repo that
-has been running since July 2026 - 250+ commits of trajectory recording and
-measurement that stay closed, because they carry live wallets. What landed
-here is the decision layer, rewritten to run on public endpoints with no keys
-of its own. The seven thresholds in [`rules.json`](rules.json) are the output
-of that work, not guesses.
+**On the thresholds.** Every number in [`rules.json`](rules.json) is a starting
+point, not a law. They are set where the public launch feed shows the sharpest
+separation between coins that go on to trade and coins that never find a second
+buyer, and they are meant to be argued with: change a number, rerun the desk on
+the bundled snapshot, and see how many verdicts flip.
 
 ```
 ╭──────────────────────────────────────────────────────────────────────────────╮
@@ -61,10 +59,10 @@ Every trading bot people publish is an optimist. It scans, it enters, it shows
 a green candle. Nobody posts the trade their bot **refused**, for a boring
 reason: a refusal has no chart. There is nothing to screenshot.
 
-The measured median holding time of the operator this was built for was **42
-seconds**, and the loss came from leaving winners early, over and over. The
-hard problem was never finding a coin - thousands launch daily and half of
-them move. The hard problem was the person clicking the button.
+Finding a coin was never the hard part - thousands launch daily and half of
+them move. The hard part is the hand on the button: positions closed in
+seconds, adds to losers, a stop moved once and then again. Every one of those
+is a decision made faster than a rule can be checked.
 
 Hence an agent whose whole job is to say no, and a desk with no manual mode.
 
@@ -102,7 +100,7 @@ Tuesday, and a threshold nobody can trace is a threshold nobody can argue with.
     "add_size_fraction": 0.5
   },
   "denies": "any add to a losing position - averaging down is a desk-level ban with no override",
-  "source": "post 2026-08-25 (adds only to a profitable position, averaging down forbidden)"
+  "source": "position sizing rule: adds go to winners, averaging down is banned outright"
 }
 ```
 

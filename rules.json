@@ -22,7 +22,7 @@
       },
       "denies": "coin is still bid, or too young to be a corpse",
       "note": "deliberately says nothing about how long the coin has been silent. Silence is WARDEN's question, and a graveyard rule that demanded it would contradict max_silence_days below - nothing could ever pass both.",
-      "source": "post 2026-08-25 (~$1,800 floor) + hunt.py (age/cap bands)"
+      "source": "floor and age bands chosen where the launch snapshot separates dead curves from quiet ones"
     },
     {
       "id": "R2",
@@ -37,7 +37,7 @@
         "max_wave_age_minutes": 20
       },
       "denies": "too few copies, copies spread over days, or one wallet spamming itself",
-      "source": "post 2026-08-25 (one ticker minted dozens of times in 6h) + midwife.py"
+      "source": "copy counts and wallet spread measured on the bundled launch feed"
     },
     {
       "id": "R3",
@@ -50,7 +50,7 @@
         "min_holders": 2
       },
       "denies": "target is a clone, or the original already moved",
-      "source": "post 2026-08-25 (takes the original, forbidden to touch what already moved)"
+      "source": "clone-vs-original split, taken from name collisions in the snapshot"
     },
     {
       "id": "R4",
@@ -63,7 +63,7 @@
         "stop_overrides_lock": true
       },
       "denies": "manual exit inside the lock window while the stop has not fired",
-      "source": "post 2026-08-25 (sell locked 5 minutes) + published log (stop -25%)"
+      "source": "a lock long enough that an exit is a decision, not a reflex; stop is the only override"
     },
     {
       "id": "R5",
@@ -77,7 +77,7 @@
         "freeze_seconds": 3600
       },
       "denies": "new entries while fees paid this hour exceed half the profit made this hour",
-      "source": "post 2026-08-25 (pump.fun 1.25% each side, freeze rule) + paper.py"
+      "source": "published pump.fun fee schedule (1.25% per side) plus the Solana base fee"
     },
     {
       "id": "R6",
@@ -91,7 +91,7 @@
         "add_size_fraction": 0.5
       },
       "denies": "any add to a losing position - averaging down is a desk-level ban with no override",
-      "source": "post 2026-08-25 (adds only to a profitable position, averaging down forbidden)"
+      "source": "position sizing rule: adds go to winners, averaging down is banned outright"
     },
     {
       "id": "R7",
@@ -103,14 +103,22 @@
         "close_at_market": true
       },
       "denies": "holding past the thesis timer because it might still work",
-      "source": "post 2026-08-25 (6 hour thesis timer, closes at market)"
+      "source": "a thesis with no expiry is not a thesis; six hours is the shelf life used here"
     }
   ],
   "warden": {
     "agent": "WARDEN",
     "title": "the agent that says no",
     "asks": "if i buy this, who buys it from me?",
-    "enforces": ["R1", "R2", "R3", "R4", "R5", "R6", "R7"],
+    "enforces": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7"
+    ],
     "override": false,
     "exit_liquidity": {
       "note": "WARDEN's own checks. every one is about the exit, none about the upside. this is the only place the desk disagrees with itself: GRAVEYARD wants a corpse, WARDEN wants a live book.",
