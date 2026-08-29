@@ -1,0 +1,28 @@
+# secrets - never, under any circumstance
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+id_*.json
+wallet*.json
+keypair*.json
+
+# runtime output
+data/candles/
+data/refusals.jsonl
+data/catch.local.jsonl
+*.log
+*.pid
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# os
+.DS_Store
