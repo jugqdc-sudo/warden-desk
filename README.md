@@ -3,7 +3,7 @@
 [![licence](https://img.shields.io/badge/licence-Apache%202.0-F2B04A)](LICENSE)
 [![python](https://img.shields.io/badge/python-3.10%2B-2dd4bf)](requirements.txt)
 [![rules](https://img.shields.io/badge/rules-7%20in%20one%20file-2dd4bf)](rules.json)
-[![ci](https://github.com/Vlad9811/warden-desk/actions/workflows/ci.yml/badge.svg)](https://github.com/Vlad9811/warden-desk/actions/workflows/ci.yml)
+[![ci](https://github.com/jugqdc-sudo/warden-desk/actions/workflows/ci.yml/badge.svg)](https://github.com/jugqdc-sudo/warden-desk/actions/workflows/ci.yml)
 [![keys](https://img.shields.io/badge/keys%20required-zero-F2B04A)](.env.example)
 [![trading](https://img.shields.io/badge/executes%20trades-never-FF5C52)](#what-this-is-not)
 
@@ -115,7 +115,7 @@ Python 3.10 or newer. One dependency, `rich`, for the tables.
 ### 2. Clone and install
 
 ```bash
-git clone git@github.com:Vlad9811/warden-desk.git
+git clone git@github.com:jugqdc-sudo/warden-desk.git
 cd warden-desk
 pip install -e .
 ```
