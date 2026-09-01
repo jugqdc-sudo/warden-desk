@@ -7,6 +7,10 @@
 [![keys](https://img.shields.io/badge/keys%20required-zero-F2B04A)](.env.example)
 [![trading](https://img.shields.io/badge/executes%20trades-never-FF5C52)](#what-this-is-not)
 
+**[Live verdicts &rarr; jugqdc-sudo.github.io/warden-desk](https://jugqdc-sudo.github.io/warden-desk/)** -
+the desk runs against the live launchpad and publishes what it refused, contracts
+attached, with the timestamp of the run that produced it.
+
 An eight-agent rule engine for on-chain risk analysis. Seven agents spend the
 day looking for a reason to act. The eighth exists only to refuse, and there is
 no manual override.
