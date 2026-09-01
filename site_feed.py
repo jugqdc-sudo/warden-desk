@@ -60,13 +60,23 @@ def note(kind: str, text: str, mint: str = "") -> None:
 
 
 def newest_launches(pages: int = 3, per_page: int = 100) -> list[dict]:
-    """The most recent mints on the launchpad, newest first."""
+    """The most recent mints on the launchpad, newest first.
+
+    The endpoint answers with fewer rows than `limit` asks for, so the offset
+    walks by what actually came back. Stepping by the requested size instead
+    skips whatever the gap is - a hole in the middle of the window that the
+    wave counts would then be blind to.
+
+    It also refuses to page much past a thousand rows, which is why the window
+    this returns is roughly forty minutes and not the six hours R2 talks about.
+    """
     rows: list[dict] = []
-    for page in range(pages):
+    offset = 0
+    for _ in range(pages):
         batch = get_json(
             LAUNCH_API,
             params={
-                "offset": page * per_page,
+                "offset": offset,
                 "limit": per_page,
                 "sort": "created_timestamp",
                 "order": "DESC",
@@ -76,6 +86,7 @@ def newest_launches(pages: int = 3, per_page: int = 100) -> list[dict]:
         if not isinstance(batch, list) or not batch:
             break
         rows.extend(row for row in batch if isinstance(row, dict) and row.get("mint"))
+        offset += len(batch)
     return rows
 
 
@@ -126,7 +137,7 @@ def candidate_for(wave: dict) -> Candidate | None:
         "read",
         f"${original.ticker or wave['ticker']} original {original.mint[:6]}… - "
         f"cap {'unknown' if original.cap_usd is None else '$' + format(int(original.cap_usd), ',')}, "
-        f"{'holders unknown' if holders is None else str(holders.count) + ' holders'}, "
+        f"{'holders unknown' if holders is None else str(holders.count) + ('' if holders.exact else '+') + ' holders'}, "
         f"silent {0 if original.silence_days is None else int(original.silence_days)}d",
         original.mint,
     )
@@ -228,6 +239,9 @@ def verdict_rows(cleared, denied) -> list[dict]:
             "at": candidate.seen_at,
             "cap_usd": candidate.cap_usd,
             "holders": candidate.holders,
+            # False means the RPC hit its twenty-account ceiling and the real
+            # number is higher. The page prints "20+" rather than "20".
+            "holders_exact": candidate.holders_exact,
             "top10_share": candidate.top10_share,
             "silence_days": candidate.silence_days,
             "clones": candidate.clones,

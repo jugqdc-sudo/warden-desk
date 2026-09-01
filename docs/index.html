@@ -375,6 +375,15 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     verdict per ticker per 24 hours, the cooldown the rulebook already gives WARDEN, so these are
     new names rather than the same ones judged again.
   </p>
+  <p class="dim reveal" style="font-size:14.5px">
+    <b style="color:var(--amber)">Two limits worth stating plainly.</b> The launchpad endpoint stops
+    paging at about a thousand rows, so a run sees roughly the last forty minutes of mints - R2 counts
+    copies over six hours, which means the copy counts here are a floor and some
+    <code>wave too thin</code> refusals would not survive the full window. And
+    <code>getTokenLargestAccounts</code> returns at most twenty accounts, so a coin printed as
+    <code>20+ holders</code> has at least twenty and possibly far more. Both are stated in the log
+    rather than rounded away.
+  </p>
 </section>
 
 <section>
@@ -800,7 +809,9 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     row.className = "row" + (v.verdict === "PASS" ? " pass" : "") + (fresh ? " fresh" : "");
     var when = new Date(v.at*1000).toISOString().slice(11,19);
     var bits = [];
-    if (v.holders != null) bits.push(v.holders + " holders");
+    // "20+" when the RPC hit its ceiling - printing a flat 20 would be a claim
+    // the data does not support.
+    if (v.holders != null) bits.push(v.holders + (v.holders_exact === false ? "+" : "") + " holders");
     if (v.silence_days != null) bits.push("silent " + Math.round(v.silence_days) + "d");
     if (v.cap_usd != null) bits.push(money(v.cap_usd));
     row.innerHTML =
