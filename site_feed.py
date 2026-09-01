@@ -280,6 +280,23 @@ def snapshot_stats() -> dict:
     }
 
 
+def previous_ruling(path: str = OUT_PATH) -> dict | None:
+    """The last run that actually judged something, carried forward."""
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as handle:
+            old = json.load(handle)
+    except Exception:
+        return None
+    if old.get("last_ruling"):
+        return old["last_ruling"]
+    session = old.get("session") or {}
+    if session.get("candidates"):
+        return dict(session, at=old.get("generated_at"))
+    return None
+
+
 def build(top: int, save_refusals: bool, pages: int = 20) -> dict:
     started = time.time()
     book = rules.load()
@@ -287,7 +304,14 @@ def build(top: int, save_refusals: bool, pages: int = 20) -> dict:
 
     candidates, seen = collect(top, pages=pages)
     if not candidates:
-        raise RuntimeError("no candidates built - the feed answered but held no wave")
+        # Not a failure: the feed answered, every wave in it was already ruled on
+        # today. Say so in the log rather than going silent - a desk that only
+        # speaks when it has news is indistinguishable from a dead one.
+        note(
+            "done",
+            f"scanned {seen['launches_pulled']} mints, {seen['waves_found']} waves - "
+            f"every one already ruled on within the cooldown, nothing new to judge",
+        )
 
     cleared, denied = warden.review(candidates, save=save_refusals)
 
@@ -332,8 +356,22 @@ def build(top: int, save_refusals: bool, pages: int = 20) -> dict:
             "candidates": len(candidates),
             "cleared": len(cleared),
             "denied": len(denied),
-            "refusal_rate": round(len(denied) / len(candidates), 4),
+            "refusal_rate": round(len(denied) / len(candidates), 4) if candidates else 0.0,
         },
+        # A run that judged nobody must not reset the counters to zero: the page
+        # would read as "the desk cleared everything". Carry the last run that
+        # actually ruled, with its own timestamp attached.
+        "last_ruling": (
+            {
+                "at": time.time(),
+                "candidates": len(candidates),
+                "cleared": len(cleared),
+                "denied": len(denied),
+                "refusal_rate": round(len(denied) / len(candidates), 4),
+            }
+            if candidates
+            else previous_ruling()
+        ),
         "verdicts": verdict_rows(cleared, denied),
         "ledger": ledger_totals(),
         "snapshot": snapshot_stats(),

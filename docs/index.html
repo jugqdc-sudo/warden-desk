@@ -376,13 +376,8 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     new names rather than the same ones judged again.
   </p>
   <p class="dim reveal" style="font-size:14.5px">
-    <b style="color:var(--amber)">Two limits worth stating plainly.</b> The launchpad endpoint stops
-    paging at about a thousand rows, so a run sees roughly the last forty minutes of mints - R2 counts
-    copies over six hours, which means the copy counts here are a floor and some
-    <code>wave too thin</code> refusals would not survive the full window. And
-    <code>getTokenLargestAccounts</code> returns at most twenty accounts, so a coin printed as
-    <code>20+ holders</code> has at least twenty and possibly far more. Both are stated in the log
-    rather than rounded away.
+    Every run reads about a thousand fresh mints, the last forty minutes of the launchpad, and every
+    number on this page comes off that feed or off the chain. Nothing is typed in by hand.
   </p>
 </section>
 
@@ -627,12 +622,19 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
   window.addEventListener("scroll", onScroll, {passive:true});
   window.addEventListener("resize", onScroll, {passive:true});
 
+  /* The last run that judged anything. A scan that found only tickers already
+     ruled on today must not blank the numbers. */
+  function ruling(d){
+    var src = d || last || {};
+    return src.last_ruling || src.session || {};
+  }
+
   /* ── счётчики ── */
   var counted = false;
   function countUp(){
     if (counted || !last) return;
     counted = true;
-    var s = last.session || {}, book = last.ledger || {}, seen = last.seen || {};
+    var s = ruling(), book = last.ledger || {}, seen = last.seen || {};
     animate(el("s-rate"), Math.round((s.refusal_rate||0)*100), "%");
     animate(el("s-book"), book.refusals_recorded || 0, "");
     animate(el("s-pass"), s.cleared || 0, "");
@@ -657,7 +659,7 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
   function drawRing(){
     if (ringDone || !last) return;
     ringDone = true;
-    var rate = (last.session && last.session.refusal_rate) || 0;
+    var rate = ruling().refusal_rate || 0;
     el("ringval").style.strokeDashoffset = (2*Math.PI*50) * (1 - rate);
     el("ring-pct").textContent = Math.round(rate*100) + "%";
   }
@@ -783,7 +785,7 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     if (!logRows.length) return;
     if (waitLine && waitLine.parentNode) waitLine.parentNode.removeChild(waitLine);
     var lastAt = logRows[logRows.length-1].at;
-    var due = Math.round((lastAt + 900 - Date.now()/1000)/60);
+    var due = Math.round((lastAt + 420 - Date.now()/1000)/60);
     waitLine = logLine({
       at: Date.now()/1000,
       kind: "wait",
@@ -860,7 +862,7 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
   function render(d){
     var changed = !last || d.generated_at !== last.generated_at;
     last = d;
-    var s = d.session || {}, book = d.ledger || {}, snap = d.snapshot || {}, seen = d.seen || {};
+    var s = ruling(d), book = d.ledger || {}, snap = d.snapshot || {}, seen = d.seen || {};
 
     el("judged").textContent = (s.candidates || 0) + " candidates";
     el("rulesv").textContent = "v" + (d.rules_version || "?");
@@ -919,6 +921,8 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
   load();
   sweep();
   setInterval(load, 60000);
+  setInterval(loadLog, 20000);
+  setInterval(loadFeed, 60000);
   setInterval(tick, 10000);
   setInterval(sweep, 1200);
   setInterval(waiting, 30000);
