@@ -39,6 +39,10 @@ from core.ledger import REFUSALS_PATH, Candidate, load_refusals
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT_PATH = os.environ.get("DESK_SITE_JSON", os.path.join(ROOT, "docs", "data", "latest.json"))
 RULED_PATH = os.environ.get("DESK_RULED", os.path.join(ROOT, "data", "ruled.json"))
+HISTORY_PATH = os.environ.get(
+    "DESK_SITE_HISTORY", os.path.join(ROOT, "docs", "data", "history.json")
+)
+HISTORY_KEEP = 300
 LAUNCH_API = "https://frontend-api-v3.pump.fun/coins"
 COOLDOWN_SECONDS = rules.load().warden["exit_liquidity"]["verdict_cooldown_hours"] * 3600
 
@@ -267,6 +271,40 @@ def build(top: int, save_refusals: bool, pages: int = 20) -> dict:
     }
 
 
+def append_history(payload: dict, path: str = HISTORY_PATH) -> None:
+    """One line per run, so the page can draw what the desk has been doing.
+
+    Kept short on purpose: this file is fetched by every visitor.
+    """
+    history = []
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as handle:
+                history = json.load(handle)
+        except Exception:
+            history = []
+    if not isinstance(history, list):
+        history = []
+
+    session = payload["session"]
+    history.append(
+        {
+            "at": round(payload["generated_at"]),
+            "judged": session["candidates"],
+            "denied": session["denied"],
+            "cleared": session["cleared"],
+            "rate": session["refusal_rate"],
+            "waves": payload["seen"].get("waves_found", 0),
+            "book": payload["ledger"].get("refusals_recorded", 0),
+        }
+    )
+    history = history[-HISTORY_KEEP:]
+
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(history, handle, separators=(",", ":"))
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description="write the live JSON the public page reads")
     parser.add_argument("--top", type=int, default=12, help="candidates to judge this run")
@@ -293,6 +331,7 @@ def main(argv: list[str]) -> int:
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as handle:
         handle.write(text + "\n")
+    append_history(payload)
 
     session = payload["session"]
     print(
