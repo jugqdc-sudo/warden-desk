@@ -139,6 +139,28 @@ p{margin:0 0 17px; max-width:68ch} p:last-child{margin-bottom:0}
 .reveal.in{opacity:1; transform:none;
   transition:opacity .75s cubic-bezier(.2,.7,.3,1), transform .75s cubic-bezier(.2,.7,.3,1)}
 
+/* ── монета ── */
+.coinbox{background:var(--panel); border:1px solid var(--line); padding:26px;
+  border-left:3px solid var(--teal)}
+.coinhead{display:flex; gap:18px; align-items:center; margin-bottom:22px}
+.coinhead img{image-rendering:pixelated; flex:none;
+  filter:drop-shadow(0 0 14px rgba(45,212,191,.35))}
+.cname{font-family:var(--pixel); font-size:20px; color:var(--teal); margin-bottom:7px}
+.cnote{font-size:14.5px; color:var(--text); max-width:62ch}
+.ca{display:flex; align-items:center; gap:14px; width:100%; text-align:left; cursor:pointer;
+  font-family:var(--mono); font-size:13px; color:var(--cream); background:#0c141a;
+  border:1px dashed #24333f; padding:14px 16px; transition:border-color .2s, color .2s}
+.ca:hover{border-color:var(--teal); color:var(--teal)}
+.ca span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1}
+.ca em{font-style:normal; font-family:var(--pixel); font-size:10px; color:var(--dim); flex:none}
+.ca.done em{color:var(--teal)}
+.cstats{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line); margin-top:20px}
+.cstats>div{background:var(--panel2); padding:16px; display:flex; flex-direction:column; gap:9px}
+.cstats .k{font-family:var(--pixel); font-size:9px; color:var(--dim)}
+.cstats .v{font-family:var(--mono); font-size:22px; color:var(--cream);
+  font-variant-numeric:tabular-nums}
+
 /* ── счётчики ── */
 .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr));
   gap:1px; background:var(--line); border:1px solid var(--line)}
@@ -317,6 +339,38 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
 </div>
 
 <div class="wrap">
+
+<section id="coin" hidden>
+  <h2>The coin that funds the desk</h2>
+  <div class="coinbox reveal">
+    <div class="coinhead">
+      <img src="media/coin_small.png" alt="" width="56" height="56">
+      <div>
+        <div class="cname" id="c-name">$WARDEN</div>
+        <div class="cnote">creator fees fund the server, the data and the hours. the desk itself
+          stays free, open and keyless.</div>
+      </div>
+    </div>
+    <button class="ca" id="c-ca" type="button" title="click to copy">
+      <span id="c-mint">-</span><em id="c-copied">copy</em>
+    </button>
+    <div class="cstats">
+      <div><span class="k">market cap</span><span class="v" id="c-cap">-</span></div>
+      <div><span class="k">holders</span><span class="v" id="c-holders">-</span></div>
+      <div><span class="k">top 10 hold</span><span class="v" id="c-top10">-</span></div>
+      <div><span class="k">age</span><span class="v" id="c-age">-</span></div>
+    </div>
+    <div class="links" style="justify-content:flex-start; margin-top:20px">
+      <a class="primary" id="c-pump" href="#" target="_blank" rel="noopener">pump.fun</a>
+      <a id="c-dex" href="#" target="_blank" rel="noopener">dexscreener</a>
+      <a href="https://x.com/ventry089" target="_blank" rel="noopener">@ventry089</a>
+    </div>
+    <p class="dim" style="margin-top:18px; font-size:13.5px">
+      Read live off the chain, same as every other number here. No target, no forecast, no
+      promise of a return - the numbers are simply what they are at this minute.
+    </p>
+  </div>
+</section>
 
 <section id="numbers">
   <h2>What the last run did</h2>
@@ -856,6 +910,49 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
       .catch(function(){});
   }
 
+  /* ── монета ── */
+  function renderCoin(coin){
+    if (!coin || !coin.mint) return;
+    var box = el("coin");
+    box.hidden = false;
+    el("c-name").textContent = "$" + (coin.ticker || "WARDEN");
+    el("c-mint").textContent = coin.mint;
+    el("c-cap").textContent = money(coin.cap_usd);
+    el("c-holders").textContent = coin.holders == null ? "-"
+      : n(coin.holders) + (coin.holders_exact === false ? "+" : "");
+    el("c-top10").textContent = coin.top10_share == null ? "-"
+      : Math.round(coin.top10_share*100) + "%";
+    var mins = coin.age_minutes || 0;
+    el("c-age").textContent = mins < 60 ? mins + "m"
+      : (mins < 1440 ? Math.round(mins/60) + "h" : Math.round(mins/1440) + "d");
+    el("c-pump").href = "https://pump.fun/coin/" + coin.mint;
+    el("c-dex").href = "https://dexscreener.com/solana/" + coin.mint;
+
+    var button = el("c-ca");
+    if (!button.dataset.wired){
+      button.dataset.wired = "1";
+      button.addEventListener("click", function(){
+        var text = el("c-mint").textContent;
+        var done = function(){
+          button.classList.add("done");
+          el("c-copied").textContent = "copied";
+          setTimeout(function(){
+            button.classList.remove("done");
+            el("c-copied").textContent = "copy";
+          }, 1800);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(done, function(){});
+        } else {                                   // http pages and old browsers
+          var tmp = document.createElement("textarea");
+          tmp.value = text; document.body.appendChild(tmp); tmp.select();
+          try { document.execCommand("copy"); done(); } catch(e){}
+          document.body.removeChild(tmp);
+        }
+      });
+    }
+  }
+
   function tick(){
     if (!last) return;
     var age = (Date.now()/1000) - last.generated_at;
@@ -882,6 +979,7 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     }
 
     renderFeed(archive.length ? archive : (d.verdicts || []));
+    renderCoin(d.coin);
 
     el("f-launches").textContent = n(snap.launches);
     el("f-tickers").textContent = n(snap.tickers);

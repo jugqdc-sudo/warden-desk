@@ -280,6 +280,33 @@ def snapshot_stats() -> dict:
     }
 
 
+COIN_MINT = os.environ.get("DESK_COIN", "")
+
+
+def coin_status() -> dict | None:
+    """The token this desk is funded by, read the same way as anything else.
+
+    No claim is made about it here beyond what the chain says: cap, holders,
+    concentration. If DESK_COIN is unset the page simply has no coin section.
+    """
+    if not COIN_MINT:
+        return None
+    quote = market.quote(COIN_MINT)
+    if quote is None:
+        return None
+    holders = chain.holders(COIN_MINT)
+    return {
+        "mint": COIN_MINT,
+        "ticker": quote.ticker,
+        "cap_usd": quote.cap_usd,
+        "holders": holders.count if holders else None,
+        "holders_exact": holders.exact if holders else True,
+        "top10_share": holders.top10_share if holders else None,
+        "age_minutes": round((quote.age_days or 0) * 24 * 60),
+        "migrated": quote.migrated,
+    }
+
+
 def previous_ruling(path: str = OUT_PATH) -> dict | None:
     """The last run that actually judged something, carried forward."""
     if not os.path.exists(path):
@@ -375,6 +402,7 @@ def build(top: int, save_refusals: bool, pages: int = 20) -> dict:
         "verdicts": verdict_rows(cleared, denied),
         "ledger": ledger_totals(),
         "snapshot": snapshot_stats(),
+        "coin": coin_status(),
     }
 
 
