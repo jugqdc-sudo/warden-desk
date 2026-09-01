@@ -26,3 +26,7 @@ venv/
 
 # os
 .DS_Store
+
+# local tooling
+.claude/
+data/ruled.json

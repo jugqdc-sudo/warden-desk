@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WARDEN DESK - the agent that says no</title>
+<meta name="description" content="Eight agents. Seven look for a reason to buy, the eighth only refuses. Live verdicts, no keys, no wallet, no execution layer.">
+<meta property="og:title" content="WARDEN DESK">
+<meta property="og:description" content="Seven agents hunt for a reason to buy. The eighth exists only to refuse, and it outranks the other seven. Live refusals, contract addresses attached.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23F2B04A' stroke-width='4'/%3E%3Cline x1='7' y1='25' x2='25' y2='7' stroke='%23F2B04A' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500&display=swap">
+<style>
+:root{
+  --ink:#05070b; --panel:#0b0f16; --line:#1a2130;
+  --text:#c9d4e4; --dim:#4d5b70;
+  --amber:#F2B04A; --deny:#FF5C52; --teal:#2dd4bf;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--ink); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.6;
+  padding:0 20px 100px;
+}
+.wrap{max-width:860px; margin:0 auto}
+
+/* ── шапка ── */
+header{padding:56px 0 34px; border-bottom:1px solid var(--line)}
+.mark{
+  width:58px; height:58px; margin-bottom:24px;
+  border:5px solid var(--amber); border-radius:50%; position:relative;
+}
+.mark::after{
+  content:""; position:absolute; left:-5px; top:50%; width:58px; height:5px;
+  background:var(--amber); transform:rotate(-45deg); transform-origin:center;
+}
+h1{
+  font-family:var(--mono); font-weight:700; font-size:clamp(30px,7vw,46px);
+  letter-spacing:-.02em; margin:0 0 14px; color:#fff; line-height:1.05;
+}
+.tagline{font-size:19px; margin:0; max-width:62ch}
+.tagline b{color:var(--amber); font-weight:500}
+.sub{color:var(--dim); font-size:14px; margin:16px 0 0; font-family:var(--mono)}
+
+/* ── живая строка ── */
+.live{
+  margin:26px 0 0; padding:13px 16px; background:var(--panel);
+  border:1px solid var(--line); font-family:var(--mono); font-size:13px;
+  display:flex; flex-wrap:wrap; gap:9px 18px; align-items:center;
+}
+.dot{
+  width:9px; height:9px; border-radius:50%; background:var(--teal);
+  box-shadow:0 0 0 0 rgba(45,212,191,.55); animation:pulse 2.4s infinite; flex:none;
+}
+.dot.stale{background:var(--amber); animation:none; box-shadow:none}
+.dot.cold{background:var(--deny); animation:none; box-shadow:none}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(45,212,191,.5)}
+  70%{box-shadow:0 0 0 9px rgba(45,212,191,0)}
+  100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}
+}
+.live .k{color:var(--dim)}
+.live .v{color:#fff}
+
+/* ── цифры прогона ── */
+.stats{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px; background:var(--line); border:1px solid var(--line); margin:26px 0 0;
+}
+.stat{background:var(--panel); padding:18px}
+.stat .n{
+  font-family:var(--mono); font-weight:700; font-size:clamp(26px,5vw,34px);
+  color:#fff; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums;
+}
+.stat.deny .n{color:var(--deny)}
+.stat.pass .n{color:var(--teal)}
+.stat .l{color:var(--dim); font-size:12px; font-family:var(--mono);
+  text-transform:uppercase; letter-spacing:.1em; margin-top:9px}
+
+section{padding:40px 0; border-bottom:1px solid var(--line)}
+h2{
+  font-family:var(--mono); font-size:13px; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--amber); margin:0 0 18px;
+}
+h2 .count{color:var(--dim); letter-spacing:.06em}
+p{margin:0 0 16px; max-width:66ch}
+p:last-child{margin-bottom:0}
+.dim{color:var(--dim)}
+
+/* ── лента вердиктов ── */
+.feed{display:flex; flex-direction:column; gap:1px; background:var(--line);
+  border:1px solid var(--line)}
+.row{
+  background:var(--panel); padding:13px 16px; display:grid;
+  grid-template-columns:64px 108px 1fr auto; gap:14px; align-items:baseline;
+  font-family:var(--mono); font-size:13px; border-left:3px solid var(--deny);
+}
+.row.pass{border-left-color:var(--teal); background:#071310}
+.row .tag{color:var(--deny); font-weight:700; letter-spacing:.06em}
+.row.pass .tag{color:var(--teal)}
+.row .tk{color:#fff; font-weight:700; overflow:hidden; text-overflow:ellipsis}
+.row .why{font-family:var(--sans); font-size:14px; color:var(--text); min-width:0}
+.row .why .code{color:var(--amber); font-family:var(--mono); font-size:12px}
+.row .meta{color:var(--dim); font-size:12px; text-align:right; white-space:nowrap}
+.row a{color:var(--dim); text-decoration:none; border-bottom:1px dotted var(--line)}
+.row a:hover{color:var(--amber)}
+@media(max-width:680px){
+  .row{grid-template-columns:56px 1fr; gap:5px 12px}
+  .row .why{grid-column:1/-1}
+  .row .meta{grid-column:1/-1; text-align:left}
+}
+.loading{background:var(--panel); padding:22px 16px; font-family:var(--mono);
+  font-size:13px; color:var(--dim)}
+
+/* ── причины отказов ── */
+.bars{display:flex; flex-direction:column; gap:9px; font-family:var(--mono); font-size:13px}
+.bar{display:grid; grid-template-columns:52px 1fr 180px; gap:12px; align-items:center}
+.bar .num{color:#fff; text-align:right; font-variant-numeric:tabular-nums}
+.bar .track{height:9px; background:#111725; overflow:hidden}
+.bar .fill{height:100%; background:var(--deny); opacity:.85}
+.bar .lab{color:var(--dim); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+@media(max-width:560px){
+  .bar{grid-template-columns:46px 1fr; }
+  .bar .lab{grid-column:2/3}
+}
+
+/* ── агенты ── */
+.agents{display:flex; flex-direction:column; gap:1px; background:var(--line);
+  border:1px solid var(--line)}
+.agent{
+  background:var(--panel); padding:14px 18px;
+  display:grid; grid-template-columns:124px 1fr; gap:16px; align-items:baseline;
+}
+.agent .n{font-family:var(--mono); font-weight:700; color:var(--teal); font-size:14px}
+.agent .d{font-size:15px}
+.agent.boss{background:#140d05}
+.agent.boss .n{color:var(--amber)}
+.agent.boss .d{color:#fff}
+@media(max-width:560px){ .agent{grid-template-columns:1fr; gap:5px} }
+
+/* ── таблица фактов ── */
+.facts{width:100%; border-collapse:collapse; font-size:15px}
+.facts td{padding:11px 0; border-bottom:1px solid var(--line); vertical-align:top}
+.facts td:first-child{color:var(--dim); padding-right:24px}
+.facts td:last-child{font-family:var(--mono); text-align:right; color:#fff;
+  font-variant-numeric:tabular-nums; white-space:nowrap}
+.facts tr:last-child td{border-bottom:none}
+
+/* ── чего нет ── */
+.nope{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px}
+.nope li{padding-left:28px; position:relative}
+.nope li::before{
+  content:"NO"; position:absolute; left:0; top:1px;
+  font-family:var(--mono); font-size:11px; font-weight:700; color:var(--deny);
+}
+
+/* ── ссылки ── */
+.links{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px}
+.links a{
+  font-family:var(--mono); font-size:14px; text-decoration:none;
+  padding:13px 20px; border:1px solid var(--line); background:var(--panel);
+  color:var(--text); transition:border-color .15s, color .15s;
+}
+.links a:hover,.links a:focus-visible{border-color:var(--amber); color:var(--amber)}
+.links a.primary{border-color:var(--amber); color:var(--amber)}
+.links a.primary:hover{background:var(--amber); color:var(--ink)}
+a{color:var(--amber)}
+:focus-visible{outline:2px solid var(--amber); outline-offset:3px}
+footer{padding:34px 0 0; color:var(--dim); font-family:var(--mono); font-size:13px}
+code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark" aria-hidden="true"></div>
+  <h1>WARDEN DESK</h1>
+  <p class="tagline">Eight agents. Seven of them hunt for a reason to buy. <b>The eighth exists only to refuse, and it outranks the other seven.</b></p>
+  <p class="sub">open source &middot; apache 2.0 &middot; no keys &middot; no wallet &middot; never executes</p>
+
+  <div class="live" id="live">
+    <span class="dot" id="dot" aria-hidden="true"></span>
+    <span><span class="k">last run</span> <span class="v" id="ago">reading…</span></span>
+    <span><span class="k">judged</span> <span class="v" id="judged">-</span></span>
+    <span><span class="k">rules</span> <span class="v" id="rulesv">-</span></span>
+    <span><span class="k">holders read via</span> <span class="v" id="src">-</span></span>
+  </div>
+
+  <div class="stats">
+    <div class="stat deny"><div class="n" id="s-rate">-</div><div class="l">refused this run</div></div>
+    <div class="stat deny"><div class="n" id="s-book">-</div><div class="l">refusals on the book</div></div>
+    <div class="stat pass"><div class="n" id="s-pass">-</div><div class="l">cleared this run</div></div>
+    <div class="stat"><div class="n" id="s-waves">-</div><div class="l">waves in the feed</div></div>
+  </div>
+</header>
+
+<section>
+  <h2>Live verdicts <span class="count" id="feed-count"></span></h2>
+  <div class="feed" id="feed">
+    <div class="loading">connecting to the desk…</div>
+  </div>
+  <p class="dim" style="margin-top:16px; font-size:14px">
+    Every line is one candidate the desk built off the live launchpad feed and then judged:
+    the rule that fired, the sentence it fired with, and the contract address, so the coin can be
+    looked up later and the rule argued with. Refusals are appended to <code>data/refusals.jsonl</code>.
+  </p>
+  <p class="dim" style="font-size:14px">
+    A run pulls the newest mints off pump.fun, groups them by ticker, looks up the oldest coin ever
+    minted under each name and hands it to WARDEN. The clock above is the timestamp of that run, not
+    of your page load - when the desk stops running, the page says so instead of pretending. One
+    verdict per ticker per 24 hours, the cooldown the rulebook already gives WARDEN, so these are new
+    names rather than the same ones judged again.
+  </p>
+</section>
+
+<section>
+  <h2>Why the refusals are the product</h2>
+  <p>Every trading bot anyone publishes is an optimist. It scans, it enters, it shows a green
+  candle. Nobody posts the trade their bot <b>refused</b>, for a boring reason: <b>a refusal has
+  no chart.</b> There is nothing to screenshot.</p>
+  <p>That half is where the money was going. So this desk writes down the other side - every
+  refusal, with the contract attached - and in a month anyone can check what those coins did
+  and tell me the rules were wrong.</p>
+  <p class="dim">The refusal rate runs high on purpose, and the honest reason is not "the market
+  is bad". It is that the desk disagrees with itself: GRAVEYARD wants a corpse on the floor of an
+  empty curve, WARDEN wants a live order book to sell into. Both are rules, and neither one gets
+  to win by argument.</p>
+</section>
+
+<section>
+  <h2>Why each candidate was refused <span class="count">whole book</span></h2>
+  <div class="bars" id="bars"><div class="loading">reading the ledger…</div></div>
+</section>
+
+<section>
+  <h2>The eight, one job each</h2>
+  <div class="agents">
+    <div class="agent"><span class="n">GRAVEYARD</span><span class="d">indexes the dead. A coin that runs out of buyers sinks to the floor of an empty curve and stays there.</span></div>
+    <div class="agent"><span class="n">MIDWIFE</span><span class="d">counts names, not candles. Forty nine mints of one ticker in six hours is not a market, it is production.</span></div>
+    <div class="agent"><span class="n">COLLECTOR</span><span class="d">takes the original, never the clone. If it already ran, the desk is not interested.</span></div>
+    <div class="agent"><span class="n">CLOCK</span><span class="d">keeps the sell button locked for five minutes. The stop is the only thing that overrides it.</span></div>
+    <div class="agent"><span class="n">TOLL</span><span class="d">counts the fee while you trade, and freezes new entries when the hour's fees eat the hour's profit.</span></div>
+    <div class="agent"><span class="n">LADDER</span><span class="d">adds to winners, and only to winners. Averaging down is banned at desk level, with no override.</span></div>
+    <div class="agent"><span class="n">UNDERTAKER</span><span class="d">the thesis has a clock. Six hours, then the position closes whether or not it might still work.</span></div>
+    <div class="agent boss"><span class="n">WARDEN</span><span class="d">the one that says no. It asks a single question: if I buy this, who buys it from me?</span></div>
+  </div>
+  <p class="dim" style="margin-top:18px">Seven rules, seven agents, one threshold file. Nothing in the
+  code hard-codes a number - every agent reads <code>rules.json</code>, so all seven can be read,
+  diffed and argued with in one screen.</p>
+</section>
+
+<section>
+  <h2>What the desk is standing on</h2>
+  <table class="facts">
+    <tr><td>launches in the bundled snapshot</td><td id="f-launches">-</td></tr>
+    <tr><td>distinct names in it</td><td id="f-tickers">-</td></tr>
+    <tr><td>deployer wallets</td><td id="f-deployers">-</td></tr>
+    <tr><td>days of feed it covers</td><td id="f-days">-</td></tr>
+    <tr><td>launches pulled live, last run</td><td id="f-pulled">-</td></tr>
+    <tr><td>waves found in them</td><td id="f-waves">-</td></tr>
+    <tr><td>refusals written down so far</td><td id="f-book">-</td></tr>
+    <tr><td>thresholds, all in one file</td><td>7</td></tr>
+  </table>
+  <p class="dim" style="margin-top:18px">Public on-chain facts only. No key was used to build any
+  of it, and the desk runs on a fresh clone with no network access beyond the bundled snapshot.</p>
+</section>
+
+<section>
+  <h2>What is not in it</h2>
+  <ul class="nope">
+    <li>execution layer. It never signs a transaction.</li>
+    <li>private key handling. There is no key that unlocks trading, because there is no trading.</li>
+    <li>wallet.</li>
+    <li>claimed returns. No multiples, no green portfolio screenshots.</li>
+  </ul>
+  <p style="margin-top:20px" class="dim">Unknown is a no. On a fresh clone the desk cannot read
+  holder counts without an indexed RPC, and it does not shrug and pass - it refuses.</p>
+</section>
+
+<section style="border-bottom:none">
+  <h2>Open</h2>
+  <div class="links">
+    <a class="primary" href="https://github.com/jugqdc-sudo/warden-desk">github.com/jugqdc-sudo/warden-desk</a>
+    <a href="https://x.com/ventry089">@ventry089</a>
+  </div>
+</section>
+
+<footer>the agent that finds coins is cheap. the one that refuses them is the product.</footer>
+
+</div>
+
+<script>
+(function(){
+  var DATA = "data/latest.json";
+  var STALE_MIN = 45, COLD_MIN = 180;
+  var last = null;
+
+  function n(x){ return x == null ? "-" : Number(x).toLocaleString("en-US"); }
+  function money(x){
+    if (x == null) return "-";
+    if (x >= 1e6) return "$" + (x/1e6).toFixed(1) + "M";
+    if (x >= 1e3) return "$" + Math.round(x/1e3) + "k";
+    return "$" + Math.round(x);
+  }
+  function ago(seconds){
+    if (seconds < 60) return Math.max(0, Math.round(seconds)) + " seconds ago";
+    var m = Math.round(seconds/60);
+    if (m < 60) return m + (m === 1 ? " minute ago" : " minutes ago");
+    var h = Math.floor(m/60);
+    if (h < 24) return h + (h === 1 ? " hour ago" : " hours ago");
+    var d = Math.floor(h/24);
+    return d + (d === 1 ? " day ago" : " days ago");
+  }
+  function el(id){ return document.getElementById(id); }
+
+  function tick(){
+    if (!last) return;
+    var age = (Date.now()/1000) - last.generated_at;
+    el("ago").textContent = ago(age);
+    var dot = el("dot");
+    dot.className = "dot" + (age > COLD_MIN*60 ? " cold" : (age > STALE_MIN*60 ? " stale" : ""));
+  }
+
+  function feedRow(v){
+    var row = document.createElement("div");
+    row.className = "row" + (v.verdict === "PASS" ? " pass" : "");
+    var when = new Date(v.at*1000).toISOString().slice(11,19);
+    var bits = [];
+    if (v.holders != null) bits.push(v.holders + " holders");
+    if (v.silence_days != null) bits.push("silent " + Math.round(v.silence_days) + "d");
+    if (v.cap_usd != null) bits.push(money(v.cap_usd));
+    row.innerHTML =
+      '<span class="tag">' + (v.verdict === "PASS" ? "PASS" : "DENY") + '</span>' +
+      '<span class="tk">$' + String(v.ticker).replace(/^\$+/, "").slice(0,12) + '</span>' +
+      '<span class="why"><span class="code">' + v.rule + " " + v.code + '</span> - ' + v.reason + '</span>' +
+      '<span class="meta">' + bits.join(" · ") + ' · <a href="https://pump.fun/coin/' + v.mint +
+      '" target="_blank" rel="noopener">' + v.mint.slice(0,4) + "…" + v.mint.slice(-4) + '</a> · ' + when + ' UTC</span>';
+    return row;
+  }
+
+  function bars(byCode){
+    var wrap = el("bars");
+    var entries = Object.keys(byCode).map(function(k){ return [k, byCode[k]]; })
+      .sort(function(a,b){ return b[1]-a[1]; }).slice(0,7);
+    if (!entries.length){ wrap.innerHTML = '<div class="loading">no refusals recorded yet</div>'; return; }
+    var top = entries[0][1];
+    wrap.innerHTML = "";
+    entries.forEach(function(e){
+      var bar = document.createElement("div");
+      bar.className = "bar";
+      bar.innerHTML = '<span class="num">' + n(e[1]) + '</span>' +
+        '<span class="track"><span class="fill" style="width:' + (100*e[1]/top) + '%"></span></span>' +
+        '<span class="lab">' + e[0] + '</span>';
+      wrap.appendChild(bar);
+    });
+  }
+
+  function render(d){
+    last = d;
+    var s = d.session || {}, book = d.ledger || {}, snap = d.snapshot || {}, seen = d.seen || {};
+
+    el("judged").textContent = (s.candidates || 0) + " candidates";
+    el("rulesv").textContent = "v" + (d.rules_version || "?");
+    el("src").textContent = (d.sources && d.sources.holders) || "-";
+    el("s-rate").textContent = Math.round((s.refusal_rate || 0)*100) + "%";
+    el("s-book").textContent = n(book.refusals_recorded);
+    el("s-pass").textContent = n(s.cleared);
+    el("s-waves").textContent = n(seen.waves_found);
+
+    var feed = el("feed");
+    feed.innerHTML = "";
+    (d.verdicts || []).forEach(function(v){ feed.appendChild(feedRow(v)); });
+    if (!feed.children.length) feed.innerHTML = '<div class="loading">no verdicts in the last run</div>';
+    el("feed-count").textContent = (d.verdicts || []).length + " this run";
+
+    bars(book.by_code || {});
+
+    el("f-launches").textContent = n(snap.launches);
+    el("f-tickers").textContent = n(snap.tickers);
+    el("f-deployers").textContent = n(snap.deployers);
+    el("f-days").textContent = snap.days ? snap.days + " days" : "-";
+    el("f-pulled").textContent = n(seen.launches_pulled);
+    el("f-waves").textContent = n(seen.waves_found);
+    el("f-book").textContent = n(book.refusals_recorded);
+
+    tick();
+  }
+
+  function load(){
+    fetch(DATA + "?t=" + Date.now(), {cache:"no-store"})
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(function(){
+        if (last) return;
+        el("ago").textContent = "no run published yet";
+        el("dot").className = "dot cold";
+        el("feed").innerHTML = '<div class="loading">the desk has not published a run to this page yet</div>';
+        el("bars").innerHTML = '<div class="loading">-</div>';
+      });
+  }
+
+  load();
+  setInterval(load, 60000);
+  setInterval(tick, 10000);
+})();
+</script>
+</body>
+</html>
