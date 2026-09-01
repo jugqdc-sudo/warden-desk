@@ -110,6 +110,9 @@ body{
   vertical-align:-2px; animation:blink 1.05s steps(2) infinite}
 @keyframes blink{0%,50%{opacity:1} 50.01%,100%{opacity:0}}
 
+.notrade{margin:16px 0 0; max-width:790px; font-size:14.5px; color:var(--text);
+  border-left:2px solid var(--amber); padding:9px 0 9px 15px; background:rgba(242,176,74,.05)}
+.notrade b{color:var(--amber); font-weight:500}
 .status{margin:26px 0 0; display:flex; flex-wrap:wrap; gap:9px 20px; align-items:center;
   font-family:var(--mono); font-size:12.5px; animation:rise .9s .4s cubic-bezier(.2,.7,.3,1) both}
 .dot{width:9px; height:9px; border-radius:50%; background:var(--teal); flex:none;
@@ -297,8 +300,9 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
       <div class="bar"><i></i><i></i><i></i> warden@desk - desk log, live</div>
       <div class="body" id="term"></div>
     </div>
-    <p class="sub" style="margin-top:14px; opacity:.85">
-      no trade log, by design - the desk holds no keys and signs nothing. what it logs is refusals.
+    <p class="notrade">
+      looking for trades? there are none, and that is the point - the desk holds no keys and signs
+      nothing. <b>what it logs is refusals</b>, with the rule and the contract attached.
     </p>
 
     <div class="status">
