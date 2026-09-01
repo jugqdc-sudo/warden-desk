@@ -1,7 +1,7 @@
 {
- "generated_at": 1788282105.2527292,
- "generated_iso": "2026-09-01T17:01:45Z",
- "run_seconds": 92.7,
+ "generated_at": 1788282623.5066721,
+ "generated_iso": "2026-09-01T17:10:23Z",
+ "run_seconds": 95.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,65 +9,49 @@
  },
  "seen": {
   "launches_pulled": 70,
-  "distinct_tickers": 57,
-  "waves_found": 6,
+  "distinct_tickers": 60,
+  "waves_found": 5,
   "waves_on_cooldown": 1,
-  "window_minutes": 2.4833333333333334
+  "window_minutes": 2.35
  },
  "session": {
-  "candidates": 2,
+  "candidates": 1,
   "cleared": 0,
-  "denied": 2,
+  "denied": 1,
   "refusal_rate": 1.0
  },
  "last_ruling": {
-  "at": 1788282105.25281,
-  "candidates": 2,
+  "at": 1788282623.506759,
+  "candidates": 1,
   "cleared": 0,
-  "denied": 2,
+  "denied": 1,
   "refusal_rate": 1.0
  },
  "verdicts": [
   {
    "verdict": "DENY",
-   "ticker": "MM",
-   "mint": "DyuX2BKXJmBbzzWUjD64k9aMTSYG3WcjT4715mcV6KrW",
+   "ticker": "BULLPRO",
+   "mint": "FCgzFUHKADevKMUnYuLpU5wojuXxmsQQJRHw3Hrcpump",
    "rule": "R2",
    "agent": "MIDWIFE",
    "code": "wave too thin",
-   "reason": "2 copies of $MM - a wave starts at 8",
-   "at": 1788282090.164122,
-   "cap_usd": 2944.081343185568,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.9999986968314972,
-   "silence_days": 483.9764602326519,
+   "reason": "2 copies of $BULLPRO - a wave starts at 8",
+   "at": 1788282614.808824,
+   "cap_usd": 2818.38784695066,
+   "holders": 1,
+   "holders_exact": true,
+   "top10_share": 1.0,
+   "silence_days": 578.0740371366784,
    "clones": 2
-  },
-  {
-   "verdict": "DENY",
-   "ticker": "HAT",
-   "mint": "GtuDCaVmL3B2F4MSUUep5qxgDazUzUkab6Mw4iWeZGyM",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "7 copies of $HAT - a wave starts at 8",
-   "at": 1788282046.611635,
-   "cap_usd": 6297.600324650896,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.9110308547044526,
-   "silence_days": 24.00362351393534,
-   "clones": 7
   }
  ],
  "ledger": {
-  "refusals_recorded": 759,
+  "refusals_recorded": 760,
   "first_at": 1787816075.96651,
-  "last_at": 1788282090.164122,
+  "last_at": 1788282614.808824,
   "by_code": {
    "no counterparty": 403,
-   "wave too thin": 175,
+   "wave too thin": 176,
    "size moves it": 40,
    "exit is one wallet": 40,
    "too young to be dead": 34,
