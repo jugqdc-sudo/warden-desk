@@ -89,10 +89,23 @@ body{
   letter-spacing:.02em}
 .term .bar i{width:8px; height:8px; border-radius:50%; background:#1d2a33; display:block}
 .term .bar i:first-child{background:var(--deny)}
-.term .body{padding:18px 16px; min-height:126px}
-.term .line{margin:0 0 7px; color:var(--dim); white-space:pre-wrap; word-break:break-word}
-.term .line b{color:var(--cream); font-weight:400}
-.term .line.red b{color:var(--deny)}
+.term .body{padding:14px 16px; height:270px; overflow:hidden; display:flex;
+  flex-direction:column; justify-content:flex-end; gap:3px}
+.term .line{margin:0; color:var(--dim); white-space:pre-wrap; word-break:break-word;
+  font-size:12.5px; line-height:1.5; display:grid; grid-template-columns:66px 1fr; gap:10px}
+.term .line time{color:#2c3f4b; font-variant-numeric:tabular-nums}
+.term .line b{font-weight:400; color:var(--text)}
+.term .line.new{animation:slidein .35s ease-out}
+@keyframes slidein{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+.term .line.read b{color:var(--teal)}
+.term .line.deny b{color:var(--deny)}
+.term .line.pass b{color:#7ef7e4}
+.term .line.done b{color:var(--amber)}
+.term .line.wait b{color:var(--dim)}
+@media(max-width:620px){
+  .term .body{height:230px}
+  .term .line{grid-template-columns:56px 1fr; font-size:11.5px}
+}
 .term .cursor{display:inline-block; width:8px; height:14px; background:var(--teal);
   vertical-align:-2px; animation:blink 1.05s steps(2) infinite}
 @keyframes blink{0%,50%{opacity:1} 50.01%,100%{opacity:0}}
@@ -166,7 +179,11 @@ p{margin:0 0 17px; max-width:68ch} p:last-child{margin-bottom:0}
 .legend i{display:inline-block; width:14px; height:2px; vertical-align:3px; margin-right:7px}
 
 /* ── лента ── */
-.feed{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line)}
+.feed{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);
+  max-height:660px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#1d2a33 transparent}
+.feed::-webkit-scrollbar{width:9px}
+.feed::-webkit-scrollbar-thumb{background:#1d2a33}
+.feed::-webkit-scrollbar-track{background:transparent}
 .row{background:var(--panel); padding:16px 18px; display:grid;
   grid-template-columns:60px 124px minmax(0,1fr) auto; gap:16px; align-items:baseline;
   font-family:var(--mono); font-size:13px; border-left:3px solid var(--deny);
@@ -277,9 +294,12 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     <p class="sub">open source &middot; apache 2.0 &middot; no keys &middot; no wallet &middot; never executes a trade</p>
 
     <div class="term" aria-live="polite">
-      <div class="bar"><i></i><i></i><i></i> warden@desk - live verdict</div>
+      <div class="bar"><i></i><i></i><i></i> warden@desk - desk log, live</div>
       <div class="body" id="term"></div>
     </div>
+    <p class="sub" style="margin-top:14px; opacity:.85">
+      no trade log, by design - the desk holds no keys and signs nothing. what it logs is refusals.
+    </p>
 
     <div class="status">
       <span class="dot" id="dot" aria-hidden="true"></span>
@@ -707,41 +727,71 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     });
   }
 
-  /* ── терминал ── */
-  var typing = null;
-  function runTerminal(){
-    if (!last || !last.verdicts || !last.verdicts.length) return;
-    if (typing) clearTimeout(typing);
-    var i = 0, box = el("term");
-    function show(){
-      var v = last.verdicts[i % last.verdicts.length];
-      i++;
-      var lines = [
-        {t:"$ desk judge " + v.mint.slice(0,16) + "…", cls:""},
-        {t:(v.verdict === "PASS" ? "CLEARED " : "DENIED  ") + "$" + String(v.ticker).replace(/^\$+/,""),
-         cls: v.verdict === "PASS" ? "" : "red"},
-        {t:v.rule + " " + v.agent + " - " + v.reason, cls:""}
-      ];
+  /* ── журнал деска ──
+     Every line the desk wrote about its own run, streamed newest at the bottom.
+     What it never contains is a trade: this desk signs nothing. */
+  var LOG_ON_SCREEN = 13;
+  var logRows = [], logShown = 0, waitLine = null;
+
+  function clock(at){ return new Date(at*1000).toISOString().slice(11,19); }
+
+  function logLine(row, fresh){
+    var p = document.createElement("p");
+    p.className = "line " + (row.kind || "") + (fresh ? " new" : "");
+    var time = document.createElement("time");
+    time.textContent = clock(row.at);
+    var body = document.createElement("b");
+    body.textContent = row.text;
+    p.appendChild(time); p.appendChild(body);
+    return p;
+  }
+
+  function renderLog(rows){
+    var box = el("term");
+    if (!rows || !rows.length) return;
+    var fresh = logShown > 0;
+    var tail = rows.slice(-LOG_ON_SCREEN);
+
+    if (!fresh){                                  // first paint: whole screenful
       box.innerHTML = "";
-      var li = 0;
-      function nextLine(){
-        if (li >= lines.length){ typing = setTimeout(show, 3400); return; }
-        var line = document.createElement("p");
-        line.className = "line " + lines[li].cls;
-        box.appendChild(line);
-        var text = lines[li].t, ci = 0;
-        li++;
-        (function type(){
-          if (reduced){ line.innerHTML = "<b>"+text+"</b>"; nextLine(); return; }
-          ci += 2;
-          line.innerHTML = "<b>"+text.slice(0,ci)+"</b>" + (ci < text.length ? '<span class="cursor"></span>' : "");
-          if (ci < text.length) typing = setTimeout(type, 14);
-          else typing = setTimeout(nextLine, 240);
-        })();
-      }
-      nextLine();
+      tail.forEach(function(row){ box.appendChild(logLine(row, false)); });
+    } else {
+      var added = rows.slice(logShown);           // only what is new since last poll
+      added.forEach(function(row){
+        box.appendChild(logLine(row, true));
+        while (box.children.length > LOG_ON_SCREEN) box.removeChild(box.firstChild);
+      });
     }
-    show();
+    logShown = rows.length;
+    logRows = rows;
+    waiting();
+  }
+
+  function waiting(){
+    // The desk runs on a timer, so say when the next one is due rather than
+    // leaving a dead screen between runs.
+    var box = el("term");
+    if (!logRows.length) return;
+    if (waitLine && waitLine.parentNode) waitLine.parentNode.removeChild(waitLine);
+    var lastAt = logRows[logRows.length-1].at;
+    var due = Math.round((lastAt + 900 - Date.now()/1000)/60);
+    waitLine = logLine({
+      at: Date.now()/1000,
+      kind: "wait",
+      text: due > 0 ? "idle - next run in about " + due + " minute" + (due === 1 ? "" : "s")
+                    : "run due now"
+    }, false);
+    waitLine.querySelector("b").innerHTML =
+      waitLine.querySelector("b").textContent + ' <span class="cursor"></span>';
+    box.appendChild(waitLine);
+    while (box.children.length > LOG_ON_SCREEN + 1) box.removeChild(box.firstChild);
+  }
+
+  function loadLog(){
+    fetch("data/log.json?t=" + Date.now(), {cache:"no-store"})
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(rows){ if (rows && rows.length) renderLog(rows); })
+      .catch(function(){});
   }
 
   /* ── лента ── */
@@ -761,6 +811,32 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
       '" target="_blank" rel="noopener">' + v.mint.slice(0,4) + "…" + v.mint.slice(-4) +
       '</a> · ' + when + ' UTC</span>';
     return row;
+  }
+
+  /* ── лента вердиктов, накопленная за много прогонов ── */
+  var archive = [];
+  function renderFeed(rows){
+    var feed = el("feed");
+    var ordered = rows.slice().sort(function(a,b){ return (b.at||0) - (a.at||0); });
+    feed.innerHTML = "";
+    ordered.forEach(function(v){
+      var fresh = !first && !seenMints[v.mint];
+      seenMints[v.mint] = 1;
+      feed.appendChild(feedRow(v, fresh));
+    });
+    if (!feed.children.length) feed.innerHTML = '<div class="loading">no verdicts published yet</div>';
+    el("feed-count").textContent = ordered.length + " verdicts, newest first";
+  }
+
+  function loadFeed(){
+    fetch("data/feed.json?t=" + Date.now(), {cache:"no-store"})
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(rows){
+        if (!rows || !rows.length) return;
+        archive = rows;
+        renderFeed(archive);
+      })
+      .catch(function(){});
   }
 
   function tick(){
@@ -788,15 +864,7 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
       barsDrawn = false; drawBars();
     }
 
-    var feed = el("feed");
-    feed.innerHTML = "";
-    (d.verdicts || []).forEach(function(v){
-      var fresh = !first && !seenMints[v.mint];
-      seenMints[v.mint] = 1;
-      feed.appendChild(feedRow(v, fresh));
-    });
-    if (!feed.children.length) feed.innerHTML = '<div class="loading">no verdicts in the last run</div>';
-    el("feed-count").textContent = (d.verdicts || []).length + " this run";
+    renderFeed(archive.length ? archive : (d.verdicts || []));
 
     el("f-launches").textContent = n(snap.launches);
     el("f-tickers").textContent = n(snap.tickers);
@@ -806,7 +874,6 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
     el("f-waves").textContent = n(seen.waves_found);
     el("f-book").textContent = n(book.refusals_recorded);
 
-    if (changed) runTerminal();
     if (first){ first = false; (d.verdicts||[]).forEach(function(v){ seenMints[v.mint] = 1; }); }
     tick();
     sweep();
@@ -831,9 +898,11 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
         el("ago").textContent = "no run published yet";
         el("dot").className = "dot cold";
         el("feed").innerHTML = '<div class="loading">the desk has not published a run to this page yet</div>';
-        el("term").innerHTML = '<p class="line"><b>$ waiting for the first run…</b><span class="cursor"></span></p>';
+        el("term").innerHTML = '<p class="line"><time>--:--:--</time><b>waiting for the first run…</b></p>';
       });
     loadHistory();
+    loadFeed();
+    loadLog();
   }
 
   load();
@@ -841,6 +910,7 @@ code{font-family:var(--mono); font-size:.9em; color:var(--teal)}
   setInterval(load, 60000);
   setInterval(tick, 10000);
   setInterval(sweep, 1200);
+  setInterval(waiting, 30000);
   document.addEventListener("visibilitychange", sweep);
 })();
 </script>

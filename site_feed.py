@@ -43,8 +43,20 @@ HISTORY_PATH = os.environ.get(
     "DESK_SITE_HISTORY", os.path.join(ROOT, "docs", "data", "history.json")
 )
 HISTORY_KEEP = 300
+LOG_PATH = os.environ.get("DESK_SITE_LOG", os.path.join(ROOT, "docs", "data", "log.json"))
+LOG_KEEP = 400
+FEED_PATH = os.environ.get("DESK_SITE_FEED", os.path.join(ROOT, "docs", "data", "feed.json"))
+FEED_KEEP = 150
 LAUNCH_API = "https://frontend-api-v3.pump.fun/coins"
 COOLDOWN_SECONDS = rules.load().warden["exit_liquidity"]["verdict_cooldown_hours"] * 3600
+
+#: Everything the desk did this run, in order, for the public log on the page.
+EVENTS: list[dict] = []
+
+
+def note(kind: str, text: str, mint: str = "") -> None:
+    """Write one line of the desk's own log. `kind` colours it on the page."""
+    EVENTS.append({"at": time.time(), "kind": kind, "text": text, "mint": mint})
 
 
 def newest_launches(pages: int = 3, per_page: int = 100) -> list[dict]:
@@ -98,12 +110,26 @@ def waves(launches: list[dict], min_copies: int = 2) -> list[dict]:
 
 def candidate_for(wave: dict) -> Candidate | None:
     """The oldest coin ever minted under this ticker, priced and read live."""
+    note(
+        "scan",
+        f"wave ${wave['ticker']} - {wave['copies']} mints from {wave['wallets']} "
+        f"wallet{'s' if wave['wallets'] != 1 else ''}, looking up the original",
+    )
     listings = market.search(wave["ticker"], limit=50, oldest_first=True)
     if not listings:
+        note("scan", f"${wave['ticker']} - launchpad returned no match, skipped")
         return None
 
     original = listings[0]
     holders = chain.holders(original.mint)
+    note(
+        "read",
+        f"${original.ticker or wave['ticker']} original {original.mint[:6]}… - "
+        f"cap {'unknown' if original.cap_usd is None else '$' + format(int(original.cap_usd), ',')}, "
+        f"{'holders unknown' if holders is None else str(holders.count) + ' holders'}, "
+        f"silent {0 if original.silence_days is None else int(original.silence_days)}d",
+        original.mint,
+    )
 
     return Candidate(
         mint=original.mint,
@@ -145,6 +171,7 @@ def save_ruled(ruled: dict[str, float], path: str = RULED_PATH) -> None:
 
 def collect(top: int, pages: int = 20) -> tuple[list[Candidate], dict]:
     """Build candidates off the live feed. Returns them plus what was seen."""
+    note("scan", "pulling the newest mints off pump.fun")
     launches = newest_launches(pages=pages)
     if not launches:
         raise RuntimeError("launchpad did not answer - nothing was judged")
@@ -168,6 +195,12 @@ def collect(top: int, pages: int = 20) -> tuple[list[Candidate], dict]:
         "waves_on_cooldown": len(all_waves) - len(found),
         "window_minutes": ((max(stamps) - min(stamps)) / 60) if len(stamps) > 1 else 0.0,
     }
+    note(
+        "scan",
+        f"{seen['launches_pulled']} mints over {seen['window_minutes']:.0f} minutes, "
+        f"{seen['distinct_tickers']} distinct names - {seen['waves_found']} tickers minted "
+        f"more than once, {seen['waves_on_cooldown']} of them already ruled on today",
+    )
 
     candidates: list[Candidate] = []
     for wave in found:
@@ -244,6 +277,28 @@ def build(top: int, save_refusals: bool, pages: int = 20) -> dict:
 
     cleared, denied = warden.review(candidates, save=save_refusals)
 
+    ruled_rows = [("DENY", c, v) for c, v in denied] + [("PASS", c, v) for c, v in cleared]
+    ruled_rows.sort(key=lambda row: row[1].seen_at)
+    for kind, candidate, verdict in ruled_rows:
+        if kind == "DENY":
+            note(
+                "deny",
+                f"DENY ${candidate.ticker} - {verdict.rule_id} {verdict.agent} "
+                f"{verdict.code}: {verdict.reason}",
+                candidate.mint,
+            )
+        else:
+            note(
+                "pass",
+                f"PASS ${candidate.ticker} - cleared all seven and the exit checks",
+                candidate.mint,
+            )
+    note(
+        "done",
+        f"run finished - {len(candidates)} judged, {len(cleared)} cleared, "
+        f"{len(denied)} refused and written to data/refusals.jsonl",
+    )
+
     if save_refusals:
         ruled = load_ruled()
         ruled.update({candidate.ticker: candidate.seen_at for candidate in candidates})
@@ -305,6 +360,36 @@ def append_history(payload: dict, path: str = HISTORY_PATH) -> None:
         json.dump(history, handle, separators=(",", ":"))
 
 
+def _load_list(path: str) -> list:
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, encoding="utf-8") as handle:
+            rows = json.load(handle)
+        return rows if isinstance(rows, list) else []
+    except Exception:
+        return []
+
+
+def _write_list(path: str, rows: list) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(rows, handle, separators=(",", ":"), ensure_ascii=False)
+
+
+def append_log(path: str = LOG_PATH) -> None:
+    """The desk's own log, kept across runs - what the page streams as it happened."""
+    _write_list(path, (_load_list(path) + EVENTS)[-LOG_KEEP:])
+
+
+def append_feed(verdicts: list[dict], path: str = FEED_PATH) -> None:
+    """Every verdict the desk has published lately, newest last, no duplicates."""
+    rows = _load_list(path)
+    seen = {row.get("mint") for row in rows}
+    rows.extend(row for row in reversed(verdicts) if row.get("mint") not in seen)
+    _write_list(path, rows[-FEED_KEEP:])
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description="write the live JSON the public page reads")
     parser.add_argument("--top", type=int, default=12, help="candidates to judge this run")
@@ -332,6 +417,8 @@ def main(argv: list[str]) -> int:
     with open(OUT_PATH, "w", encoding="utf-8") as handle:
         handle.write(text + "\n")
     append_history(payload)
+    append_log()
+    append_feed(payload["verdicts"])
 
     session = payload["session"]
     print(

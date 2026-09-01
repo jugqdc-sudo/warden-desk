@@ -24,7 +24,7 @@ PYTHON="${PYTHON:-python3}"
     exit 1
 }
 
-git add docs/data/latest.json docs/data/history.json data/refusals.jsonl 2>/dev/null || true
+git add docs/data/latest.json docs/data/history.json docs/data/log.json docs/data/feed.json data/refusals.jsonl 2>/dev/null || true
 git diff --cached --quiet && { echo "nothing changed"; exit 0; }
 
 git -c user.name="${GIT_NAME:-warden-desk}" \
