@@ -1,7 +1,7 @@
 {
- "generated_at": 1788342563.420496,
- "generated_iso": "2026-09-02T09:49:23Z",
- "run_seconds": 22.3,
+ "generated_at": 1788343030.551527,
+ "generated_iso": "2026-09-02T09:57:10Z",
+ "run_seconds": 43.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,80 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 456,
-  "waves_found": 122,
+  "distinct_tickers": 465,
+  "waves_found": 125,
   "waves_on_cooldown": 110,
-  "window_minutes": 68.48333333333333
+  "window_minutes": 73.93333333333334
  },
  "session": {
-  "candidates": 0,
+  "candidates": 3,
   "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1788342117.6304169,
-  "candidates": 1,
-  "cleared": 0,
-  "denied": 1,
+  "denied": 3,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1788343030.5515578,
+  "candidates": 3,
+  "cleared": 0,
+  "denied": 3,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "HONEYPOT",
+   "mint": "BxEG5Hm8aC4CUPzVJh3x3fdppMrWdwsqUT6WtRHpC999",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $HONEYPOT - a wave starts at 8",
+   "at": 1788343030.522609,
+   "cap_usd": 2758.722864795832,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 81.37050373380659,
+   "clones": 2
+  },
+  {
+   "verdict": "DENY",
+   "ticker": "SPCE",
+   "mint": "7dJX5X212axdnYj1tqFDU6rMuvdjrNZ8Tc2mVHSpFuCd",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $SPCE - a wave starts at 8",
+   "at": 1788343029.231518,
+   "cap_usd": 2757.517043571263,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 88.50011842010474,
+   "clones": 2
+  },
+  {
+   "verdict": "DENY",
+   "ticker": "SUL",
+   "mint": "HZGgDtYDqM8VkH6eWNMUJoD7J4nBDU9g9YTAeWWwKiiZ",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $SUL - a wave starts at 8",
+   "at": 1788343008.359442,
+   "cap_usd": 3199.929514868348,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 7.618140733807727,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 2114,
+  "refusals_recorded": 2117,
   "first_at": 1787816075.96651,
-  "last_at": 1788342117.617774,
+  "last_at": 1788343030.522609,
   "by_code": {
-   "wave too thin": 1258,
+   "wave too thin": 1261,
    "no counterparty": 467,
    "too young to be dead": 174,
    "size moves it": 40,
@@ -58,11 +107,11 @@
  "coin": {
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
-  "cap_usd": 3055.6390204276695,
+  "cap_usd": 3055.0007356615606,
   "holders": null,
   "holders_exact": true,
   "top10_share": null,
-  "age_minutes": 1016,
+  "age_minutes": 1023,
   "migrated": false
  }
 }
