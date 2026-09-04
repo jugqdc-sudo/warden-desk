@@ -1,7 +1,7 @@
 {
- "generated_at": 1788495915.374101,
- "generated_iso": "2026-09-04T04:25:15Z",
- "run_seconds": 33.6,
+ "generated_at": 1788496376.853054,
+ "generated_iso": "2026-09-04T04:32:56Z",
+ "run_seconds": 37.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,64 +9,80 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 552,
+  "distinct_tickers": 551,
   "waves_found": 138,
-  "waves_on_cooldown": 116,
-  "window_minutes": 62.61666666666667
+  "waves_on_cooldown": 111,
+  "window_minutes": 66.5
  },
  "session": {
-  "candidates": 2,
+  "candidates": 3,
   "cleared": 0,
-  "denied": 2,
+  "denied": 3,
   "refusal_rate": 1.0
  },
  "last_ruling": {
-  "at": 1788495915.374156,
-  "candidates": 2,
+  "at": 1788496376.853096,
+  "candidates": 3,
   "cleared": 0,
-  "denied": 2,
+  "denied": 3,
   "refusal_rate": 1.0
  },
  "verdicts": [
   {
    "verdict": "DENY",
-   "ticker": "KIRKPUMP",
-   "mint": "3W9BjRPEK5N2GmeaRZ9fXPgDiu96xDNC67vppq3upump",
-   "rule": "R1",
-   "agent": "GRAVEYARD",
-   "code": "below the floor",
-   "reason": "cap $552 is under the $1,100 floor - there is no curve left to stand on",
-   "at": 1788495909.896547,
-   "cap_usd": 552.3244006564241,
-   "holders": 2,
+   "ticker": "CHKD",
+   "mint": "PGDSagJynpZS3y6MuvEUTg6LZseMVEYmekSF415pump",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $CHKD - a wave starts at 8",
+   "at": 1788496372.447791,
+   "cap_usd": 3083.2127515558286,
+   "holders": 4,
    "holders_exact": true,
-   "top10_share": 1.0,
-   "silence_days": 0.010334450577696164,
+   "top10_share": 0.9999999999999999,
+   "silence_days": 651.2871000899761,
    "clones": 2
   },
   {
    "verdict": "DENY",
-   "ticker": "GUB",
-   "mint": "Bv75rf7EynuqVwGtf4JTW1cFz49s3tJqmhxLNfYzvHYD",
+   "ticker": "SQUAD",
+   "mint": "DJDYXux9K3tXod9gpzT5jTKRb5CdqXKkdzdiTc2TeFet",
    "rule": "R2",
    "agent": "MIDWIFE",
    "code": "wave too thin",
-   "reason": "2 copies of $GUB - a wave starts at 8",
-   "at": 1788495904.100857,
-   "cap_usd": 2909.694019128603,
-   "holders": 8,
+   "reason": "3 copies of $SQUAD - a wave starts at 8",
+   "at": 1788496359.689238,
+   "cap_usd": 2921.5981403904675,
+   "holders": 15,
+   "holders_exact": true,
+   "top10_share": 0.9999999984450891,
+   "silence_days": 435.39614223641104,
+   "clones": 3
+  },
+  {
+   "verdict": "DENY",
+   "ticker": "MLM",
+   "mint": "6AHkayGKfG3ua78j8EF5yywJkRkWJVCSzKYyNyCDxGdo",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "4 copies of $MLM - a wave starts at 8",
+   "at": 1788496356.6733088,
+   "cap_usd": 3615.6368326059555,
+   "holders": 2,
    "holders_exact": true,
    "top10_share": 1.0,
-   "silence_days": 874.4293113638654,
-   "clones": 2
+   "silence_days": 903.1154982092949,
+   "clones": 4
   }
  ],
  "ledger": {
-  "refusals_recorded": 5461,
+  "refusals_recorded": 5464,
   "first_at": 1787816075.96651,
-  "last_at": 1788495909.896547,
+  "last_at": 1788496372.447791,
   "by_code": {
-   "wave too thin": 3938,
+   "wave too thin": 3941,
    "too young to be dead": 599,
    "no counterparty": 552,
    "below the floor": 114,
@@ -91,11 +107,11 @@
  "coin": {
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
-  "cap_usd": 2994.751558037821,
+  "cap_usd": 3000.6075087489558,
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9983923048492027,
-  "age_minutes": 3571,
+  "age_minutes": 3579,
   "migrated": false
  }
 }
