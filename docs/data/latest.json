@@ -1,7 +1,7 @@
 {
- "generated_at": 1788611404.744504,
- "generated_iso": "2026-09-05T12:30:04Z",
- "run_seconds": 122.1,
+ "generated_at": 1788611930.8368828,
+ "generated_iso": "2026-09-05T12:38:50Z",
+ "run_seconds": 102.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 602,
-  "waves_found": 144,
-  "waves_on_cooldown": 21,
-  "window_minutes": 82.38333333333334
+  "distinct_tickers": 609,
+  "waves_found": 142,
+  "waves_on_cooldown": 27,
+  "window_minutes": 78.15
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1788589846.769876,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1788611930.836931,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "BITCOIN",
+   "mint": "J2p88S7SSazzVLrJm5LYLm13MMCmJScPmB6KDiXPFnoK",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $BITCOIN - a wave starts at 8",
+   "at": 1788611917.600747,
+   "cap_usd": 12095.352627223016,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.7804229804833192,
+   "silence_days": 0.12395371193135227,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6437,
+  "refusals_recorded": 6438,
   "first_at": 1787816075.96651,
-  "last_at": 1788589810.4640589,
+  "last_at": 1788611917.600747,
   "by_code": {
-   "wave too thin": 4728,
+   "wave too thin": 4729,
    "too young to be dead": 730,
    "no counterparty": 568,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9983923048492027,
-  "age_minutes": 5496,
+  "age_minutes": 5505,
   "migrated": false
  }
 }
