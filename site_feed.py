@@ -133,12 +133,19 @@ def candidate_for(wave: dict) -> Candidate | None:
 
     original = listings[0]
     holders = chain.holders(original.mint)
+    cap_txt = (
+        "unknown" if original.cap_usd is None
+        else "$" + format(int(original.cap_usd), ",")
+    )
+    holders_txt = (
+        "holders unknown" if holders is None
+        else f"{holders.count}{'' if holders.exact else '+'} holders"
+    )
+    silent_days = 0 if original.silence_days is None else int(original.silence_days)
     note(
         "read",
         f"${original.ticker or wave['ticker']} original {original.mint[:6]}… - "
-        f"cap {'unknown' if original.cap_usd is None else '$' + format(int(original.cap_usd), ',')}, "
-        f"{'holders unknown' if holders is None else str(holders.count) + ('' if holders.exact else '+') + ' holders'}, "
-        f"silent {0 if original.silence_days is None else int(original.silence_days)}d",
+        f"cap {cap_txt}, {holders_txt}, silent {silent_days}d",
         original.mint,
     )
 
