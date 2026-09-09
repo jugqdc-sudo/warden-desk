@@ -1,7 +1,7 @@
 {
- "generated_at": 1788918143.064631,
- "generated_iso": "2026-09-09T01:42:23Z",
- "run_seconds": 112.3,
+ "generated_at": 1788918686.137221,
+ "generated_iso": "2026-09-09T01:51:26Z",
+ "run_seconds": 119.7,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,36 +9,53 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 606,
-  "waves_found": 144,
-  "waves_on_cooldown": 2,
-  "window_minutes": 51.93333333333333
+  "distinct_tickers": 621,
+  "waves_found": 145,
+  "waves_on_cooldown": 3,
+  "window_minutes": 53.65
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1788910772.189562,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1788918686.137264,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "NA",
+   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "rule": "R1",
+   "agent": "GRAVEYARD",
+   "code": "still alive",
+   "reason": "cap $83,659 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1788918636.8231921,
+   "cap_usd": 83658.9452307,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.5140425093300893,
+   "silence_days": 0.00012871630765773633,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6464,
+  "refusals_recorded": 6465,
   "first_at": 1787816075.96651,
-  "last_at": 1788910758.902055,
+  "last_at": 1788918636.8231921,
   "by_code": {
    "wave too thin": 4754,
    "too young to be dead": 730,
    "no counterparty": 568,
    "below the floor": 135,
    "one wallet spamming": 74,
-   "still alive": 43,
+   "still alive": 44,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9988131006002403,
-  "age_minutes": 10609,
+  "age_minutes": 10618,
   "migrated": false
  }
 }
