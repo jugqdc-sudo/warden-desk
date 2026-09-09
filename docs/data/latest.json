@@ -1,7 +1,7 @@
 {
- "generated_at": 1788935938.2445529,
- "generated_iso": "2026-09-09T06:38:58Z",
- "run_seconds": 125.2,
+ "generated_at": 1788936485.296778,
+ "generated_iso": "2026-09-09T06:48:05Z",
+ "run_seconds": 122.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 585,
-  "waves_found": 160,
-  "waves_on_cooldown": 4,
-  "window_minutes": 74.15
+  "distinct_tickers": 573,
+  "waves_found": 163,
+  "waves_on_cooldown": 5,
+  "window_minutes": 76.21666666666667
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1788935938.244598,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "HAT",
-   "mint": "GtuDCaVmL3B2F4MSUUep5qxgDazUzUkab6Mw4iWeZGyM",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "3 copies of $HAT - a wave starts at 8",
-   "at": 1788935867.1107259,
-   "cap_usd": 6609.297506525224,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.9110308564791485,
-   "silence_days": 2.306147114433072,
-   "clones": 3
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6467,
   "first_at": 1787816075.96651,
@@ -79,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9988131006002403,
-  "age_minutes": 10905,
+  "age_minutes": 10914,
   "migrated": false
  }
 }
