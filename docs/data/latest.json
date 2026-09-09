@@ -1,7 +1,7 @@
 {
- "generated_at": 1788983646.4067578,
- "generated_iso": "2026-09-09T19:54:06Z",
- "run_seconds": 126.7,
+ "generated_at": 1788984182.3731241,
+ "generated_iso": "2026-09-09T20:03:02Z",
+ "run_seconds": 111.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 603,
-  "waves_found": 149,
-  "waves_on_cooldown": 2,
-  "window_minutes": 41.53333333333333
+  "distinct_tickers": 466,
+  "waves_found": 134,
+  "waves_on_cooldown": 3,
+  "window_minutes": 24.05
  },
  "session": {
   "candidates": 1,
@@ -21,7 +21,7 @@
   "refusal_rate": 1.0
  },
  "last_ruling": {
-  "at": 1788983646.406827,
+  "at": 1788984182.373178,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
@@ -30,27 +30,27 @@
  "verdicts": [
   {
    "verdict": "DENY",
-   "ticker": "CATHAT",
-   "mint": "ABn6xHxz3PeLTYP8eVG6LcBQt6NWPkVmDRHD1BRYDrK2",
+   "ticker": "PUMP",
+   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
    "rule": "R2",
    "agent": "MIDWIFE",
    "code": "wave too thin",
-   "reason": "4 copies of $CATHAT - a wave starts at 8",
-   "at": 1788983572.201705,
-   "cap_usd": 28910.33351292,
+   "reason": "5 copies of $PUMP - a wave starts at 8",
+   "at": 1788984113.0462651,
+   "cap_usd": 5216.245075539248,
    "holders": 20,
    "holders_exact": false,
-   "top10_share": 0.5542425468500524,
-   "silence_days": 3.030313641180595,
-   "clones": 4
+   "top10_share": 0.9304584501512214,
+   "silence_days": 2.115116276053919,
+   "clones": 5
   }
  ],
  "ledger": {
-  "refusals_recorded": 6470,
+  "refusals_recorded": 6471,
   "first_at": 1787816075.96651,
-  "last_at": 1788983572.201705,
+  "last_at": 1788984113.0462651,
   "by_code": {
-   "wave too thin": 4759,
+   "wave too thin": 4760,
    "too young to be dead": 730,
    "no counterparty": 568,
    "below the floor": 135,
@@ -79,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9988131006002403,
-  "age_minutes": 11700,
+  "age_minutes": 11709,
   "migrated": false
  }
 }
