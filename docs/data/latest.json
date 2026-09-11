@@ -1,7 +1,7 @@
 {
- "generated_at": 1789163004.37968,
- "generated_iso": "2026-09-11T21:43:24Z",
- "run_seconds": 152.5,
+ "generated_at": 1789163563.935838,
+ "generated_iso": "2026-09-11T21:52:43Z",
+ "run_seconds": 135.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,33 +9,50 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 590,
-  "waves_found": 165,
-  "waves_on_cooldown": 1,
-  "window_minutes": 43.333333333333336
+  "distinct_tickers": 577,
+  "waves_found": 152,
+  "waves_on_cooldown": 0,
+  "window_minutes": 39.0
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789146359.727971,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789163563.9358919,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CAP",
+   "mint": "B4Jbtzs8pnqY4yZRTB8SLmXXg3y9wpbhyStoiv64fNqJ",
+   "rule": "R0",
+   "agent": "WARDEN",
+   "code": "no counterparty",
+   "reason": "20 holders - there is nobody to sell to",
+   "at": 1789163448.579699,
+   "cap_usd": 12350.8774992,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.732798321360407,
+   "silence_days": 2.42389182496402,
+   "clones": 12
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6486,
+  "refusals_recorded": 6487,
   "first_at": 1787816075.96651,
-  "last_at": 1789146237.044487,
+  "last_at": 1789163448.579699,
   "by_code": {
    "wave too thin": 4774,
    "too young to be dead": 730,
-   "no counterparty": 568,
+   "no counterparty": 569,
    "below the floor": 135,
    "one wallet spamming": 74,
    "still alive": 45,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 14690,
+  "age_minutes": 14699,
   "migrated": false
  }
 }
