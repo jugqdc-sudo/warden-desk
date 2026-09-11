@@ -1,39 +1,56 @@
 {
- "generated_at": 1789145014.632755,
- "generated_iso": "2026-09-11T16:43:34Z",
- "run_seconds": 111.9,
+ "generated_at": 1789146359.727938,
+ "generated_iso": "2026-09-11T17:05:59Z",
+ "run_seconds": 483.6,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
   "holders": "rpc node"
  },
  "seen": {
-  "launches_pulled": 1050,
-  "distinct_tickers": 479,
-  "waves_found": 135,
-  "waves_on_cooldown": 4,
-  "window_minutes": 33.7
+  "launches_pulled": 700,
+  "distinct_tickers": 371,
+  "waves_found": 106,
+  "waves_on_cooldown": 2,
+  "window_minutes": 29.533333333333335
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789143930.041207,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789146359.727971,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "RABBIT",
+   "mint": "J4HDaxbkogUnbrYWPDa3oo3cTXAN8HhkHLp9CWcrPHk8",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $RABBIT - a wave starts at 8",
+   "at": 1789146237.044487,
+   "cap_usd": 3879.03695541515,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.9999717411085459,
+   "silence_days": 10.298275977105455,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6485,
+  "refusals_recorded": 6486,
   "first_at": 1787816075.96651,
-  "last_at": 1789143840.7722292,
+  "last_at": 1789146237.044487,
   "by_code": {
-   "wave too thin": 4773,
+   "wave too thin": 4774,
    "too young to be dead": 730,
    "no counterparty": 568,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391705838621,
-  "age_minutes": 14390,
+  "age_minutes": 14412,
   "migrated": false
  }
 }
