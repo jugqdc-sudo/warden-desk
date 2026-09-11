@@ -1,24 +1,24 @@
 {
- "generated_at": 1789146359.727938,
- "generated_iso": "2026-09-11T17:05:59Z",
- "run_seconds": 483.6,
+ "generated_at": 1789146876.640785,
+ "generated_iso": "2026-09-11T17:14:36Z",
+ "run_seconds": 90.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
   "holders": "rpc node"
  },
  "seen": {
-  "launches_pulled": 700,
-  "distinct_tickers": 371,
-  "waves_found": 106,
-  "waves_on_cooldown": 2,
-  "window_minutes": 29.533333333333335
+  "launches_pulled": 70,
+  "distinct_tickers": 60,
+  "waves_found": 5,
+  "waves_on_cooldown": 0,
+  "window_minutes": 3.3
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1789146359.727971,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "RABBIT",
-   "mint": "J4HDaxbkogUnbrYWPDa3oo3cTXAN8HhkHLp9CWcrPHk8",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $RABBIT - a wave starts at 8",
-   "at": 1789146237.044487,
-   "cap_usd": 3879.03695541515,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.9999717411085459,
-   "silence_days": 10.298275977105455,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6486,
   "first_at": 1787816075.96651,
@@ -72,14 +55,5 @@
   "deployers": 7963,
   "days": 8.5
  },
- "coin": {
-  "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
-  "ticker": "WARDEN",
-  "cap_usd": 2872.0491103985714,
-  "holders": 20,
-  "holders_exact": false,
-  "top10_share": 0.9989391705838621,
-  "age_minutes": 14412,
-  "migrated": false
- }
+ "coin": null
 }
