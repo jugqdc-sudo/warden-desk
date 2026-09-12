@@ -1,39 +1,56 @@
 {
- "generated_at": 1789250229.95503,
- "generated_iso": "2026-09-12T21:57:09Z",
- "run_seconds": 97.3,
+ "generated_at": 1789250989.747871,
+ "generated_iso": "2026-09-12T22:09:49Z",
+ "run_seconds": 319.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
   "holders": "rpc node"
  },
  "seen": {
-  "launches_pulled": 210,
-  "distinct_tickers": 145,
-  "waves_found": 26,
-  "waves_on_cooldown": 0,
-  "window_minutes": 11.233333333333333
+  "launches_pulled": 1050,
+  "distinct_tickers": 587,
+  "waves_found": 146,
+  "waves_on_cooldown": 2,
+  "window_minutes": 46.53333333333333
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789248546.310657,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789250989.7478971,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CAP",
+   "mint": "B4Jbtzs8pnqY4yZRTB8SLmXXg3y9wpbhyStoiv64fNqJ",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "3 copies of $CAP - a wave starts at 8",
+   "at": 1789250727.332319,
+   "cap_usd": 12280.277703424172,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.7327983221863509,
+   "silence_days": 0.2470293091430708,
+   "clones": 3
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6495,
+  "refusals_recorded": 6496,
   "first_at": 1787816075.96651,
-  "last_at": 1789248337.575333,
+  "last_at": 1789250727.332319,
   "by_code": {
-   "wave too thin": 4780,
+   "wave too thin": 4781,
    "too young to be dead": 730,
    "no counterparty": 570,
    "below the floor": 135,
@@ -55,5 +72,14 @@
   "deployers": 7963,
   "days": 8.5
  },
- "coin": null
+ "coin": {
+  "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
+  "ticker": "WARDEN",
+  "cap_usd": 2872.0491103985714,
+  "holders": 20,
+  "holders_exact": false,
+  "top10_share": 0.9989391706686894,
+  "age_minutes": 16156,
+  "migrated": false
+ }
 }
