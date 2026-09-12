@@ -1,7 +1,7 @@
 {
- "generated_at": 1789171254.491025,
- "generated_iso": "2026-09-12T00:00:54Z",
- "run_seconds": 118.0,
+ "generated_at": 1789171784.46221,
+ "generated_iso": "2026-09-12T00:09:44Z",
+ "run_seconds": 105.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -10,15 +10,15 @@
  "seen": {
   "launches_pulled": 1050,
   "distinct_tickers": 617,
-  "waves_found": 146,
+  "waves_found": 138,
   "waves_on_cooldown": 2,
-  "window_minutes": 46.766666666666666
+  "window_minutes": 45.88333333333333
  },
  "session": {
-  "candidates": 2,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 2,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1789171254.491071,
@@ -27,40 +27,7 @@
   "denied": 2,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "ㅤㅤㅤ",
-   "mint": "DMYA7GexqPCeZeFxjDRjAgPbut24K3DhUAXcMH48JHoX",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "one wallet spamming",
-   "reason": "3 wallet(s) minted all 8 copies - that is one person, not a crowd",
-   "at": 1789171161.234401,
-   "cap_usd": 9720.347531425161,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.7236665561615169,
-   "silence_days": 0.24019947208188197,
-   "clones": 8
-  },
-  {
-   "verdict": "DENY",
-   "ticker": "PEPE",
-   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
-   "rule": "R0",
-   "agent": "WARDEN",
-   "code": "no counterparty",
-   "reason": "20 holders - there is nobody to sell to",
-   "at": 1789171159.899838,
-   "cap_usd": 6897.362707296,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.8336843712428226,
-   "silence_days": 1.1827769299293005,
-   "clones": 8
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6490,
   "first_at": 1787816075.96651,
@@ -95,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 14827,
+  "age_minutes": 14836,
   "migrated": false
  }
 }
