@@ -1,7 +1,7 @@
 {
- "generated_at": 1789296485.034818,
- "generated_iso": "2026-09-13T10:48:05Z",
- "run_seconds": 129.5,
+ "generated_at": 1789297454.849751,
+ "generated_iso": "2026-09-13T11:04:14Z",
+ "run_seconds": 109.4,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 523,
-  "waves_found": 120,
-  "waves_on_cooldown": 2,
-  "window_minutes": 92.76666666666667
+  "distinct_tickers": 505,
+  "waves_found": 118,
+  "waves_on_cooldown": 0,
+  "window_minutes": 82.88333333333334
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789276483.471819,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789297454.849785,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "IRIS",
+   "mint": "CcqND4YtwSqDDTkF4Y3TTWauVC28iJxFYaJiaJtpE5xd",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $IRIS - a wave starts at 8",
+   "at": 1789297412.875919,
+   "cap_usd": 5615.82064973,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.8812363583173396,
+   "silence_days": 6.12452439688698,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6499,
+  "refusals_recorded": 6500,
   "first_at": 1787816075.96651,
-  "last_at": 1789276413.5474,
+  "last_at": 1789297412.875919,
   "by_code": {
-   "wave too thin": 4784,
+   "wave too thin": 4785,
    "too young to be dead": 730,
    "no counterparty": 570,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 16914,
+  "age_minutes": 16930,
   "migrated": false
  }
 }
