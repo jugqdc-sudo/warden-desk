@@ -1,7 +1,7 @@
 {
- "generated_at": 1789404339.558659,
- "generated_iso": "2026-09-14T16:45:39Z",
- "run_seconds": 128.7,
+ "generated_at": 1789404886.495615,
+ "generated_iso": "2026-09-14T16:54:46Z",
+ "run_seconds": 122.7,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 621,
-  "waves_found": 146,
-  "waves_on_cooldown": 2,
-  "window_minutes": 39.9
+  "distinct_tickers": 634,
+  "waves_found": 145,
+  "waves_on_cooldown": 4,
+  "window_minutes": 37.11666666666667
  },
  "session": {
-  "candidates": 2,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 2,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1789404339.558701,
@@ -27,40 +27,7 @@
   "denied": 2,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "SHREK",
-   "mint": "2784oaEfz4nRg7vmkwYcTRWWkit6DQacRCoi74hY4jbh",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $SHREK - a wave starts at 8",
-   "at": 1789404326.6740532,
-   "cap_usd": 37573.93178434,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.5581243984375285,
-   "silence_days": 0.007301215741921354,
-   "clones": 2
-  },
-  {
-   "verdict": "DENY",
-   "ticker": "PEPE",
-   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "5 copies of $PEPE - a wave starts at 8",
-   "at": 1789404248.679286,
-   "cap_usd": 6824.643545304,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.8339216012173174,
-   "silence_days": 0.0058489844340969014,
-   "clones": 5
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6511,
   "first_at": 1787816075.96651,
@@ -95,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 18712,
+  "age_minutes": 18721,
   "migrated": false
  }
 }
