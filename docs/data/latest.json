@@ -1,6 +1,6 @@
 {
- "generated_at": 1789364287.951006,
- "generated_iso": "2026-09-14T05:38:07Z",
+ "generated_at": 1789364836.48368,
+ "generated_iso": "2026-09-14T05:47:16Z",
  "run_seconds": 124.9,
  "rules_version": "1.0.0",
  "sources": {
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 628,
-  "waves_found": 156,
+  "distinct_tickers": 633,
+  "waves_found": 152,
   "waves_on_cooldown": 2,
-  "window_minutes": 89.63333333333334
+  "window_minutes": 92.33333333333333
  },
  "session": {
   "candidates": 0,
@@ -62,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 18044,
+  "age_minutes": 18054,
   "migrated": false
  }
 }
