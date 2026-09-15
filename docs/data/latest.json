@@ -1,7 +1,7 @@
 {
- "generated_at": 1789508431.8491578,
- "generated_iso": "2026-09-15T21:40:31Z",
- "run_seconds": 125.4,
+ "generated_at": 1789508965.2666602,
+ "generated_iso": "2026-09-15T21:49:25Z",
+ "run_seconds": 109.8,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 544,
-  "waves_found": 149,
-  "waves_on_cooldown": 3,
-  "window_minutes": 29.45
+  "distinct_tickers": 553,
+  "waves_found": 139,
+  "waves_on_cooldown": 2,
+  "window_minutes": 27.066666666666666
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789494960.8018,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789508965.266724,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "SONIC",
+   "mint": "6wutLrRDwCUNSiete4i7oKtZuehWCGRn7gJT7FH6qTbQ",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $SONIC - a wave starts at 8",
+   "at": 1789508945.082237,
+   "cap_usd": 3097.571468156933,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.9758050135105379,
+   "silence_days": 25.242017606623747,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6519,
+  "refusals_recorded": 6520,
   "first_at": 1787816075.96651,
-  "last_at": 1789494897.310299,
+  "last_at": 1789508945.082237,
   "by_code": {
-   "wave too thin": 4802,
+   "wave too thin": 4803,
    "too young to be dead": 730,
    "no counterparty": 571,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 20447,
+  "age_minutes": 20456,
   "migrated": false
  }
 }
