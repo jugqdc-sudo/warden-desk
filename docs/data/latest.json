@@ -1,7 +1,7 @@
 {
- "generated_at": 1789595099.9130938,
- "generated_iso": "2026-09-16T21:44:59Z",
- "run_seconds": 154.6,
+ "generated_at": 1789595658.8856452,
+ "generated_iso": "2026-09-16T21:54:18Z",
+ "run_seconds": 134.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 626,
-  "waves_found": 129,
+  "distinct_tickers": 592,
+  "waves_found": 131,
   "waves_on_cooldown": 3,
-  "window_minutes": 34.2
+  "window_minutes": 33.13333333333333
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1789595099.9131289,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "BITCOIN",
-   "mint": "J2p88S7SSazzVLrJm5LYLm13MMCmJScPmB6KDiXPFnoK",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $BITCOIN - a wave starts at 8",
-   "at": 1789595074.494188,
-   "cap_usd": 9230.077921518,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.8115462912570639,
-   "silence_days": 0.15330354260349716,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6529,
   "first_at": 1787816075.96651,
@@ -79,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 21891,
+  "age_minutes": 21901,
   "migrated": false
  }
 }
