@@ -1,7 +1,7 @@
 {
- "generated_at": 1789600051.1305249,
- "generated_iso": "2026-09-16T23:07:31Z",
- "run_seconds": 124.6,
+ "generated_at": 1789600610.155803,
+ "generated_iso": "2026-09-16T23:16:50Z",
+ "run_seconds": 135.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,36 +9,53 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 509,
-  "waves_found": 134,
+  "distinct_tickers": 529,
+  "waves_found": 148,
   "waves_on_cooldown": 2,
-  "window_minutes": 30.1
+  "window_minutes": 32.333333333333336
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789599501.8913028,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789600610.155835,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "NA",
+   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "rule": "R1",
+   "agent": "GRAVEYARD",
+   "code": "still alive",
+   "reason": "cap $66,440 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1789600524.8258991,
+   "cap_usd": 66440.326167,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.5369914381247368,
+   "silence_days": 0.2121062834257329,
+   "clones": 4
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6530,
+  "refusals_recorded": 6531,
   "first_at": 1787816075.96651,
-  "last_at": 1789599466.6140642,
+  "last_at": 1789600524.8258991,
   "by_code": {
    "wave too thin": 4812,
    "too young to be dead": 730,
    "no counterparty": 571,
    "below the floor": 135,
    "one wallet spamming": 75,
-   "still alive": 47,
+   "still alive": 48,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686894,
-  "age_minutes": 21974,
+  "age_minutes": 21983,
   "migrated": false
  }
 }
