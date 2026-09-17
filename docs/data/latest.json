@@ -1,7 +1,7 @@
 {
- "generated_at": 1789649352.0300329,
- "generated_iso": "2026-09-17T12:49:12Z",
- "run_seconds": 164.3,
+ "generated_at": 1789649933.0258791,
+ "generated_iso": "2026-09-17T12:58:53Z",
+ "run_seconds": 157.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 543,
-  "waves_found": 140,
+  "distinct_tickers": 523,
+  "waves_found": 143,
   "waves_on_cooldown": 1,
-  "window_minutes": 51.43333333333333
+  "window_minutes": 49.55
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789633148.1776772,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789649933.025913,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CHINA",
+   "mint": "AxV34kxdoBUDSkBYX49WqfegezAg4UUT1Pe3PqsnCZbR",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $CHINA - a wave starts at 8",
+   "at": 1789649888.950797,
+   "cap_usd": 9574.51155366,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.7559945471832947,
+   "silence_days": 10.662076165311866,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6536,
+  "refusals_recorded": 6537,
   "first_at": 1787816075.96651,
-  "last_at": 1789633103.4694269,
+  "last_at": 1789649888.950797,
   "by_code": {
-   "wave too thin": 4817,
+   "wave too thin": 4818,
    "too young to be dead": 730,
    "no counterparty": 571,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686893,
-  "age_minutes": 22795,
+  "age_minutes": 22805,
   "migrated": false
  }
 }
