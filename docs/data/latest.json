@@ -1,7 +1,7 @@
 {
- "generated_at": 1789701941.443896,
- "generated_iso": "2026-09-18T03:25:41Z",
- "run_seconds": 133.9,
+ "generated_at": 1789702482.5545652,
+ "generated_iso": "2026-09-18T03:34:42Z",
+ "run_seconds": 116.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 500,
-  "waves_found": 121,
-  "waves_on_cooldown": 1,
-  "window_minutes": 43.416666666666664
+  "distinct_tickers": 523,
+  "waves_found": 125,
+  "waves_on_cooldown": 2,
+  "window_minutes": 46.8
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1789701941.44397,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "PEPE",
-   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave is over",
-   "reason": "last copy minted 21 min ago - the production line stopped 20 min ago or more",
-   "at": 1789701827.612709,
-   "cap_usd": 6668.775594723271,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.8420972325049461,
-   "silence_days": 0.18874551726712122,
-   "clones": 28
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6542,
   "first_at": 1787816075.96651,
@@ -79,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686893,
-  "age_minutes": 23672,
+  "age_minutes": 23681,
   "migrated": false
  }
 }
