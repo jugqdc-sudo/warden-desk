@@ -1,7 +1,7 @@
 {
- "generated_at": 1789796239.30712,
- "generated_iso": "2026-09-19T05:37:19Z",
- "run_seconds": 133.2,
+ "generated_at": 1789796808.3883111,
+ "generated_iso": "2026-09-19T05:46:48Z",
+ "run_seconds": 145.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 571,
-  "waves_found": 123,
+  "distinct_tickers": 569,
+  "waves_found": 125,
   "waves_on_cooldown": 1,
-  "window_minutes": 51.35
+  "window_minutes": 52.38333333333333
  },
  "session": {
   "candidates": 0,
@@ -62,7 +62,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686893,
-  "age_minutes": 25244,
+  "age_minutes": 25253,
   "migrated": false
  }
 }
