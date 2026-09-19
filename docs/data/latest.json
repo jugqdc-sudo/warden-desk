@@ -1,7 +1,7 @@
 {
- "generated_at": 1789851614.411396,
- "generated_iso": "2026-09-19T21:00:14Z",
- "run_seconds": 388.2,
+ "generated_at": 1789852341.730539,
+ "generated_iso": "2026-09-19T21:12:21Z",
+ "run_seconds": 226.8,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,36 +9,53 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 628,
-  "waves_found": 135,
-  "waves_on_cooldown": 4,
-  "window_minutes": 35.81666666666667
+  "distinct_tickers": 598,
+  "waves_found": 134,
+  "waves_on_cooldown": 2,
+  "window_minutes": 35.71666666666667
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789789747.087135,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789852341.730602,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "NA",
+   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "rule": "R1",
+   "agent": "GRAVEYARD",
+   "code": "still alive",
+   "reason": "cap $77,175 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1789852229.145371,
+   "cap_usd": 77174.52901320001,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.5369245581934865,
+   "silence_days": 0.025745675185764278,
+   "clones": 3
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6551,
+  "refusals_recorded": 6552,
   "first_at": 1787816075.96651,
-  "last_at": 1789789727.8005152,
+  "last_at": 1789852229.145371,
   "by_code": {
    "wave too thin": 4830,
    "too young to be dead": 730,
    "no counterparty": 571,
    "below the floor": 135,
    "one wallet spamming": 75,
-   "still alive": 49,
+   "still alive": 50,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9989391706686893,
-  "age_minutes": 26167,
+  "age_minutes": 26179,
   "migrated": false
  }
 }
