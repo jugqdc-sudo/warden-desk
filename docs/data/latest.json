@@ -1,7 +1,7 @@
 {
- "generated_at": 1789890467.545259,
- "generated_iso": "2026-09-20T07:47:47Z",
- "run_seconds": 154.9,
+ "generated_at": 1789891108.4096,
+ "generated_iso": "2026-09-20T07:58:28Z",
+ "run_seconds": 216.2,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 634,
-  "waves_found": 158,
+  "distinct_tickers": 636,
+  "waves_found": 159,
   "waves_on_cooldown": 0,
-  "window_minutes": 77.23333333333333
+  "window_minutes": 78.01666666666667
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1789880511.95558,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1789891108.409643,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "PUMP",
+   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $PUMP - a wave starts at 8",
+   "at": 1789891036.752129,
+   "cap_usd": 4822.75914213914,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.9345348889203131,
+   "silence_days": 4.151339723401599,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6557,
+  "refusals_recorded": 6558,
   "first_at": 1787816075.96651,
-  "last_at": 1789880376.294276,
+  "last_at": 1789891036.752129,
   "by_code": {
-   "wave too thin": 4835,
+   "wave too thin": 4836,
    "too young to be dead": 730,
    "no counterparty": 571,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.999061087689761,
-  "age_minutes": 26814,
+  "age_minutes": 26825,
   "migrated": false
  }
 }
