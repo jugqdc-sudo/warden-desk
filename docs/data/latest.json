@@ -1,7 +1,7 @@
 {
- "generated_at": 1790056653.206631,
- "generated_iso": "2026-09-22T05:57:33Z",
- "run_seconds": 171.9,
+ "generated_at": 1790057257.122197,
+ "generated_iso": "2026-09-22T06:07:37Z",
+ "run_seconds": 180.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 639,
-  "waves_found": 142,
+  "distinct_tickers": 626,
+  "waves_found": 149,
   "waves_on_cooldown": 1,
-  "window_minutes": 67.4
+  "window_minutes": 68.98333333333333
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790044241.2390358,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790057257.12224,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "PEPE",
+   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $PEPE - a wave starts at 8",
+   "at": 1790057174.689609,
+   "cap_usd": 7586.700516864,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.8346182649022766,
+   "silence_days": 2.5803860476281906,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6567,
+  "refusals_recorded": 6568,
   "first_at": 1787816075.96651,
-  "last_at": 1790044161.7641048,
+  "last_at": 1790057174.689609,
   "by_code": {
-   "wave too thin": 4844,
+   "wave too thin": 4845,
    "too young to be dead": 730,
    "no counterparty": 572,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": 20,
   "holders_exact": false,
   "top10_share": 0.9991820858375621,
-  "age_minutes": 29584,
+  "age_minutes": 29594,
   "migrated": false
  }
 }
