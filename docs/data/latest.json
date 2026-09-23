@@ -1,7 +1,7 @@
 {
- "generated_at": 1790200704.598521,
- "generated_iso": "2026-09-23T21:58:24Z",
- "run_seconds": 152.9,
+ "generated_at": 1790201297.0255501,
+ "generated_iso": "2026-09-23T22:08:17Z",
+ "run_seconds": 168.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,36 +9,53 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 460,
-  "waves_found": 119,
+  "distinct_tickers": 487,
+  "waves_found": 121,
   "waves_on_cooldown": 0,
-  "window_minutes": 23.916666666666668
+  "window_minutes": 25.416666666666668
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790193007.091671,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790201297.025583,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "NA",
+   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "rule": "R1",
+   "agent": "GRAVEYARD",
+   "code": "still alive",
+   "reason": "cap $79,659 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1790201156.9369972,
+   "cap_usd": 79658.55922575,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.07828194417611316,
+   "clones": 15
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6578,
+  "refusals_recorded": 6579,
   "first_at": 1787816075.96651,
-  "last_at": 1790192918.989162,
+  "last_at": 1790201156.9369972,
   "by_code": {
    "wave too thin": 4852,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
    "one wallet spamming": 76,
-   "still alive": 51,
+   "still alive": 52,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
@@ -59,10 +76,10 @@
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
   "cap_usd": 3297.140277315645,
-  "holders": 20,
-  "holders_exact": false,
-  "top10_share": 1.0,
-  "age_minutes": 31985,
+  "holders": null,
+  "holders_exact": true,
+  "top10_share": null,
+  "age_minutes": 31995,
   "migrated": false
  }
 }
