@@ -1,7 +1,7 @@
 {
- "generated_at": 1790150699.9527192,
- "generated_iso": "2026-09-23T08:04:59Z",
- "run_seconds": 241.5,
+ "generated_at": 1790151279.907665,
+ "generated_iso": "2026-09-23T08:14:39Z",
+ "run_seconds": 156.2,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,35 +9,52 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 620,
-  "waves_found": 137,
-  "waves_on_cooldown": 2,
-  "window_minutes": 69.4
+  "distinct_tickers": 615,
+  "waves_found": 140,
+  "waves_on_cooldown": 1,
+  "window_minutes": 71.58333333333333
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790143833.634275,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790151279.9077692,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "PUMP",
+   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "one wallet spamming",
+   "reason": "1 wallet(s) minted all 35 copies - that is one person, not a crowd",
+   "at": 1790151141.05252,
+   "cap_usd": 5865.967855711601,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.23847282902786024,
+   "clones": 35
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6575,
+  "refusals_recorded": 6576,
   "first_at": 1787816075.96651,
-  "last_at": 1790143753.232041,
+  "last_at": 1790151141.05252,
   "by_code": {
    "wave too thin": 4851,
    "too young to be dead": 730,
    "no counterparty": 572,
    "below the floor": 135,
-   "one wallet spamming": 75,
+   "one wallet spamming": 76,
    "still alive": 51,
    "size moves it": 40,
    "exit is one wallet": 40,
@@ -62,7 +79,7 @@
   "holders": null,
   "holders_exact": true,
   "top10_share": null,
-  "age_minutes": 31151,
+  "age_minutes": 31161,
   "migrated": false
  }
 }
