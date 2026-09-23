@@ -1,7 +1,7 @@
 {
- "generated_at": 1790192388.136885,
- "generated_iso": "2026-09-23T19:39:48Z",
- "run_seconds": 149.1,
+ "generated_at": 1790193007.091636,
+ "generated_iso": "2026-09-23T19:50:07Z",
+ "run_seconds": 194.7,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 677,
-  "waves_found": 160,
+  "distinct_tickers": 686,
+  "waves_found": 178,
   "waves_on_cooldown": 0,
-  "window_minutes": 39.416666666666664
+  "window_minutes": 36.13333333333333
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790186352.9155898,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790193007.091671,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "POG",
+   "mint": "ELhWghTdJpCJaewVrkid4nVcGJ7XfzxE5KSmnjExa4t5",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $POG - a wave starts at 8",
+   "at": 1790192918.989162,
+   "cap_usd": 7192.47907223353,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 2.7869906144451213,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6577,
+  "refusals_recorded": 6578,
   "first_at": 1787816075.96651,
-  "last_at": 1790186205.1553001,
+  "last_at": 1790192918.989162,
   "by_code": {
-   "wave too thin": 4851,
+   "wave too thin": 4852,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
@@ -59,10 +76,10 @@
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
   "cap_usd": 3297.140277315645,
-  "holders": 20,
-  "holders_exact": false,
-  "top10_share": 0.9992958375581033,
-  "age_minutes": 31846,
+  "holders": null,
+  "holders_exact": true,
+  "top10_share": null,
+  "age_minutes": 31856,
   "migrated": false
  }
 }
