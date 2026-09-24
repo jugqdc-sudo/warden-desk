@@ -1,7 +1,7 @@
 {
- "generated_at": 1790246154.1050189,
- "generated_iso": "2026-09-24T10:35:54Z",
- "run_seconds": 168.2,
+ "generated_at": 1790246806.340269,
+ "generated_iso": "2026-09-24T10:46:46Z",
+ "run_seconds": 228.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 557,
-  "waves_found": 157,
+  "distinct_tickers": 573,
+  "waves_found": 166,
   "waves_on_cooldown": 2,
-  "window_minutes": 62.38086666663488
+  "window_minutes": 64.15
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790240972.815327,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790246806.340336,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "PEPE",
+   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $PEPE - a wave starts at 8",
+   "at": 1790246695.937841,
+   "cap_usd": 7102.249555929205,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.3815039090646638,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6584,
+  "refusals_recorded": 6585,
   "first_at": 1787816075.96651,
-  "last_at": 1790240905.5133922,
+  "last_at": 1790246695.937841,
   "by_code": {
-   "wave too thin": 4857,
+   "wave too thin": 4858,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
@@ -59,10 +76,10 @@
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
   "cap_usd": 3297.140277315645,
-  "holders": null,
-  "holders_exact": true,
-  "top10_share": null,
-  "age_minutes": 32742,
+  "holders": 20,
+  "holders_exact": false,
+  "top10_share": 1.0,
+  "age_minutes": 32753,
   "migrated": false
  }
 }
