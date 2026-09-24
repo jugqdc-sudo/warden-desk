@@ -1,7 +1,7 @@
 {
- "generated_at": 1790221383.789184,
- "generated_iso": "2026-09-24T03:43:03Z",
- "run_seconds": 161.7,
+ "generated_at": 1790221960.28729,
+ "generated_iso": "2026-09-24T03:52:40Z",
+ "run_seconds": 152.8,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 570,
-  "waves_found": 127,
+  "distinct_tickers": 581,
+  "waves_found": 121,
   "waves_on_cooldown": 1,
-  "window_minutes": 59.85
+  "window_minutes": 61.46666666666667
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790217875.491613,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790221960.287329,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "NIGGA",
+   "mint": "3t7p3F27yL3G771fD4x3rSExRTe59e8YoQHDy6nBxedK",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "6 copies of $NIGGA - a wave starts at 8",
+   "at": 1790221852.537794,
+   "cap_usd": 4756.518216067245,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 4.126094186192861,
+   "clones": 6
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6580,
+  "refusals_recorded": 6581,
   "first_at": 1787816075.96651,
-  "last_at": 1790217816.303593,
+  "last_at": 1790221852.537794,
   "by_code": {
-   "wave too thin": 4853,
+   "wave too thin": 4854,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
@@ -62,7 +79,7 @@
   "holders": null,
   "holders_exact": true,
   "top10_share": null,
-  "age_minutes": 32329,
+  "age_minutes": 32339,
   "migrated": false
  }
 }
