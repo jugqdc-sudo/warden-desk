@@ -1,7 +1,7 @@
 {
- "generated_at": 1790265013.1276999,
- "generated_iso": "2026-09-24T15:50:13Z",
- "run_seconds": 131.6,
+ "generated_at": 1790265597.0303879,
+ "generated_iso": "2026-09-24T15:59:57Z",
+ "run_seconds": 159.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,29 +9,46 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 643,
-  "waves_found": 143,
+  "distinct_tickers": 686,
+  "waves_found": 152,
   "waves_on_cooldown": 1,
-  "window_minutes": 40.28333333333333
+  "window_minutes": 43.5
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790246806.340336,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790265597.0304399,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "BACK",
+   "mint": "2qvgfzC79xMzXLB2jDFuUHTFbdhX6WFKxkAGPTxdNh6n",
+   "rule": "R0",
+   "agent": "WARDEN",
+   "code": "counterparty unknown",
+   "reason": "holders of $BACK could not be read - an unknown counterparty is refused like a missing one",
+   "at": 1790265459.68321,
+   "cap_usd": 15263.504604,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.5558827102763785,
+   "clones": 9
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6585,
+  "refusals_recorded": 6586,
   "first_at": 1787816075.96651,
-  "last_at": 1790246695.937841,
+  "last_at": 1790265459.68321,
   "by_code": {
    "wave too thin": 4858,
    "too young to be dead": 730,
@@ -45,7 +62,8 @@
    "book is dead": 28,
    "book is full": 12,
    "already ruled": 4,
-   "wave is over": 3
+   "wave is over": 3,
+   "counterparty unknown": 1
   },
   "path": "data/refusals.jsonl"
  },
@@ -59,10 +77,10 @@
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
   "cap_usd": 3297.140277315645,
-  "holders": 20,
-  "holders_exact": false,
-  "top10_share": 1.0,
-  "age_minutes": 33056,
+  "holders": null,
+  "holders_exact": true,
+  "top10_share": null,
+  "age_minutes": 33066,
   "migrated": false
  }
 }
