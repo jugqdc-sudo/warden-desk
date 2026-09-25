@@ -1,7 +1,7 @@
 {
- "generated_at": 1790353068.582193,
- "generated_iso": "2026-09-25T16:17:48Z",
- "run_seconds": 272.3,
+ "generated_at": 1790353721.652849,
+ "generated_iso": "2026-09-25T16:28:41Z",
+ "run_seconds": 228.8,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 695,
-  "waves_found": 152,
+  "distinct_tickers": 679,
+  "waves_found": 162,
   "waves_on_cooldown": 2,
-  "window_minutes": 38.05
+  "window_minutes": 36.916666666666664
  },
  "session": {
   "candidates": 0,
@@ -60,10 +60,10 @@
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
   "cap_usd": 3297.140277315645,
-  "holders": null,
-  "holders_exact": true,
-  "top10_share": null,
-  "age_minutes": 34524,
+  "holders": 20,
+  "holders_exact": false,
+  "top10_share": 0.9992958375581033,
+  "age_minutes": 34535,
   "migrated": false
  }
 }
