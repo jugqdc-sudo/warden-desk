@@ -1,7 +1,7 @@
 {
- "generated_at": 1790304859.657655,
- "generated_iso": "2026-09-25T02:54:19Z",
- "run_seconds": 138.9,
+ "generated_at": 1790305426.274774,
+ "generated_iso": "2026-09-25T03:03:46Z",
+ "run_seconds": 143.0,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 570,
-  "waves_found": 147,
+  "distinct_tickers": 618,
+  "waves_found": 149,
   "waves_on_cooldown": 0,
-  "window_minutes": 48.03333333333333
+  "window_minutes": 52.25
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790288188.96895,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790305426.274823,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CAP",
+   "mint": "B4Jbtzs8pnqY4yZRTB8SLmXXg3y9wpbhyStoiv64fNqJ",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $CAP - a wave starts at 8",
+   "at": 1790305406.389336,
+   "cap_usd": 13226.011821971735,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.25395126514964633,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6587,
+  "refusals_recorded": 6588,
   "first_at": 1787816075.96651,
-  "last_at": 1790287961.61792,
+  "last_at": 1790305406.389336,
   "by_code": {
-   "wave too thin": 4858,
+   "wave too thin": 4859,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
@@ -60,10 +77,10 @@
   "mint": "87jMwGkpF8tpWaUfhmcPzfM9uew2rXLiZVdu8bEqpump",
   "ticker": "WARDEN",
   "cap_usd": 3297.140277315645,
-  "holders": 20,
-  "holders_exact": false,
-  "top10_share": 1.0,
-  "age_minutes": 33721,
+  "holders": null,
+  "holders_exact": true,
+  "top10_share": null,
+  "age_minutes": 33730,
   "migrated": false
  }
 }
