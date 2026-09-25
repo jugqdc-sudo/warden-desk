@@ -1,7 +1,7 @@
 {
- "generated_at": 1790374040.6217558,
- "generated_iso": "2026-09-25T22:07:20Z",
- "run_seconds": 147.5,
+ "generated_at": 1790374609.012346,
+ "generated_iso": "2026-09-25T22:16:49Z",
+ "run_seconds": 144.6,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,36 +9,53 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 711,
-  "waves_found": 128,
-  "waves_on_cooldown": 1,
-  "window_minutes": 37.166666666666664
+  "distinct_tickers": 701,
+  "waves_found": 146,
+  "waves_on_cooldown": 0,
+  "window_minutes": 38.8
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790367772.709239,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790374609.012434,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "NA",
+   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "rule": "R1",
+   "agent": "GRAVEYARD",
+   "code": "still alive",
+   "reason": "cap $76,416 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1790374543.485158,
+   "cap_usd": 76416.351117,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 1.0,
+   "silence_days": 0.1631905892794883,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6593,
+  "refusals_recorded": 6594,
   "first_at": 1787816075.96651,
-  "last_at": 1790367685.986086,
+  "last_at": 1790374543.485158,
   "by_code": {
    "wave too thin": 4864,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
    "one wallet spamming": 76,
-   "still alive": 53,
+   "still alive": 54,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
