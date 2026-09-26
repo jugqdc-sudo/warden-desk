@@ -1,7 +1,7 @@
 {
- "generated_at": 1790387778.141251,
- "generated_iso": "2026-09-26T01:56:18Z",
- "run_seconds": 149.1,
+ "generated_at": 1790388366.059159,
+ "generated_iso": "2026-09-26T02:06:06Z",
+ "run_seconds": 164.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 549,
-  "waves_found": 125,
-  "waves_on_cooldown": 0,
-  "window_minutes": 21.633333333333333
+  "distinct_tickers": 600,
+  "waves_found": 146,
+  "waves_on_cooldown": 1,
+  "window_minutes": 25.266666666666666
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790382715.8472419,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790388366.059208,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "BO",
+   "mint": "5LfjZQ4nbx2Kkodksdr7e4tTZKhB3Tqk6bDQ43nGUNna",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "3 copies of $BO - a wave starts at 8",
+   "at": 1790388255.828043,
+   "cap_usd": 8155.244881471496,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.016028101899557643,
+   "clones": 3
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6595,
+  "refusals_recorded": 6596,
   "first_at": 1787816075.96651,
-  "last_at": 1790382695.974497,
+  "last_at": 1790388255.828043,
   "by_code": {
-   "wave too thin": 4865,
+   "wave too thin": 4866,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
