@@ -1,7 +1,7 @@
 {
- "generated_at": 1790395316.626764,
- "generated_iso": "2026-09-26T04:01:56Z",
- "run_seconds": 235.2,
+ "generated_at": 1790395904.743027,
+ "generated_iso": "2026-09-26T04:11:44Z",
+ "run_seconds": 164.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 635,
-  "waves_found": 157,
+  "distinct_tickers": 620,
+  "waves_found": 160,
   "waves_on_cooldown": 1,
-  "window_minutes": 32.983333333333334
+  "window_minutes": 34.4
  },
  "session": {
   "candidates": 0,
