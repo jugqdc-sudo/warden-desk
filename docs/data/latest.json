@@ -1,7 +1,7 @@
 {
- "generated_at": 1790435136.854445,
- "generated_iso": "2026-09-26T15:05:36Z",
- "run_seconds": 145.3,
+ "generated_at": 1790436309.173722,
+ "generated_iso": "2026-09-26T15:25:09Z",
+ "run_seconds": 313.7,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 504,
-  "waves_found": 132,
+  "distinct_tickers": 617,
+  "waves_found": 176,
   "waves_on_cooldown": 1,
-  "window_minutes": 27.2
+  "window_minutes": 36.4
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790421691.811455,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790436309.1737869,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "HAROLD",
+   "mint": "B8AmDZRJeHuq8CPciey6jocq9p4ivc4ZurDXPwtqs2Qg",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $HAROLD - a wave starts at 8",
+   "at": 1790436262.3168619,
+   "cap_usd": 22177.775506809998,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.013273122685926932,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6602,
+  "refusals_recorded": 6603,
   "first_at": 1787816075.96651,
-  "last_at": 1790421574.581942,
+  "last_at": 1790436262.3168619,
   "by_code": {
-   "wave too thin": 4872,
+   "wave too thin": 4873,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
