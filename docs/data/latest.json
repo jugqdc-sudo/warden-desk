@@ -1,7 +1,7 @@
 {
- "generated_at": 1790548386.431515,
- "generated_iso": "2026-09-27T22:33:06Z",
- "run_seconds": 145.5,
+ "generated_at": 1790548967.2073228,
+ "generated_iso": "2026-09-27T22:42:47Z",
+ "run_seconds": 157.6,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 634,
-  "waves_found": 151,
+  "distinct_tickers": 637,
+  "waves_found": 161,
   "waves_on_cooldown": 1,
-  "window_minutes": 26.1
+  "window_minutes": 25.25
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1790546139.3877802,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1790548967.207357,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "BITCOIN",
+   "mint": "J2p88S7SSazzVLrJm5LYLm13MMCmJScPmB6KDiXPFnoK",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "3 copies of $BITCOIN - a wave starts at 8",
+   "at": 1790548866.978666,
+   "cap_usd": 11441.4195303,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 1.1790964889333204,
+   "clones": 3
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6610,
+  "refusals_recorded": 6611,
   "first_at": 1787816075.96651,
-  "last_at": 1790546099.6755369,
+  "last_at": 1790548866.978666,
   "by_code": {
-   "wave too thin": 4878,
+   "wave too thin": 4879,
    "too young to be dead": 730,
    "no counterparty": 573,
    "below the floor": 135,
