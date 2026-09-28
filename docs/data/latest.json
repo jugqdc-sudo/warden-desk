@@ -1,7 +1,7 @@
 {
- "generated_at": 1790581532.150211,
- "generated_iso": "2026-09-28T07:45:32Z",
- "run_seconds": 128.1,
+ "generated_at": 1790582075.78744,
+ "generated_iso": "2026-09-28T07:54:35Z",
+ "run_seconds": 119.7,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 651,
-  "waves_found": 162,
-  "waves_on_cooldown": 3,
-  "window_minutes": 49.93333333333333
+  "distinct_tickers": 639,
+  "waves_found": 158,
+  "waves_on_cooldown": 5,
+  "window_minutes": 43.45
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1790581532.150263,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "CATHAT",
-   "mint": "ABn6xHxz3PeLTYP8eVG6LcBQt6NWPkVmDRHD1BRYDrK2",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $CATHAT - a wave starts at 8",
-   "at": 1790581480.77426,
-   "cap_usd": 32989.31208402,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 1.0,
-   "silence_days": 1.5611399797101815,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6616,
   "first_at": 1787816075.96651,
