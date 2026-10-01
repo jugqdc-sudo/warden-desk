@@ -1,7 +1,7 @@
 {
- "generated_at": 1790865154.646552,
- "generated_iso": "2026-10-01T14:32:34Z",
- "run_seconds": 113.5,
+ "generated_at": 1790865693.997637,
+ "generated_iso": "2026-10-01T14:41:33Z",
+ "run_seconds": 115.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 504,
-  "waves_found": 136,
-  "waves_on_cooldown": 0,
-  "window_minutes": 19.466666666666665
+  "distinct_tickers": 505,
+  "waves_found": 142,
+  "waves_on_cooldown": 1,
+  "window_minutes": 20.233333333333334
  },
  "session": {
   "candidates": 1,
@@ -21,7 +21,7 @@
   "refusal_rate": 1.0
  },
  "last_ruling": {
-  "at": 1790865154.6467981,
+  "at": 1790865693.9977028,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
@@ -30,27 +30,27 @@
  "verdicts": [
   {
    "verdict": "DENY",
-   "ticker": "ㅤㅤㅤ",
-   "mint": "DMYA7GexqPCeZeFxjDRjAgPbut24K3DhUAXcMH48JHoX",
-   "rule": "R0",
-   "agent": "WARDEN",
-   "code": "no counterparty",
-   "reason": "20 holders - there is nobody to sell to",
-   "at": 1790865058.5072,
-   "cap_usd": 10824.76135988895,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.7380659217303787,
-   "silence_days": 0.8401447588757233,
-   "clones": 13
+   "ticker": "PUMP",
+   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $PUMP - a wave starts at 8",
+   "at": 1790865648.73298,
+   "cap_usd": 6011.2229606201945,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 1.7849158899651634,
+   "clones": 2
   }
  ],
  "ledger": {
-  "refusals_recorded": 6644,
+  "refusals_recorded": 6645,
   "first_at": 1787816075.96651,
-  "last_at": 1790865058.5072,
+  "last_at": 1790865648.73298,
   "by_code": {
-   "wave too thin": 4906,
+   "wave too thin": 4907,
    "too young to be dead": 730,
    "no counterparty": 576,
    "below the floor": 135,
