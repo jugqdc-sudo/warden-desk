@@ -1,7 +1,7 @@
 {
- "generated_at": 1790851559.565841,
- "generated_iso": "2026-10-01T10:45:59Z",
- "run_seconds": 131.8,
+ "generated_at": 1790852122.046714,
+ "generated_iso": "2026-10-01T10:55:22Z",
+ "run_seconds": 138.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 526,
-  "waves_found": 173,
+  "distinct_tickers": 518,
+  "waves_found": 171,
   "waves_on_cooldown": 2,
-  "window_minutes": 38.11666666666667
+  "window_minutes": 39.68333333333333
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1790851559.565908,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "HAT",
-   "mint": "GtuDCaVmL3B2F4MSUUep5qxgDazUzUkab6Mw4iWeZGyM",
-   "rule": "R0",
-   "agent": "WARDEN",
-   "code": "no counterparty",
-   "reason": "20 holders - there is nobody to sell to",
-   "at": 1790851447.687308,
-   "cap_usd": 7609.289789130001,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 1.0,
-   "silence_days": 0.658768498784414,
-   "clones": 9
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6642,
   "first_at": 1787816075.96651,
