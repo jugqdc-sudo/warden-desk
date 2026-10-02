@@ -1,7 +1,7 @@
 {
- "generated_at": 1790948657.016528,
- "generated_iso": "2026-10-02T13:44:17Z",
- "run_seconds": 141.7,
+ "generated_at": 1790949222.153557,
+ "generated_iso": "2026-10-02T13:53:42Z",
+ "run_seconds": 141.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 556,
-  "waves_found": 163,
+  "distinct_tickers": 567,
+  "waves_found": 168,
   "waves_on_cooldown": 1,
-  "window_minutes": 31.916666666666668
+  "window_minutes": 31.05
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1790948657.0165849,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "SONIC",
-   "mint": "6wutLrRDwCUNSiete4i7oKtZuehWCGRn7gJT7FH6qTbQ",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $SONIC - a wave starts at 8",
-   "at": 1790948638.645216,
-   "cap_usd": 4039.123228087,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.975788786821338,
-   "silence_days": 3.474030661469808,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6654,
   "first_at": 1787816075.96651,
