@@ -1,7 +1,7 @@
 {
- "generated_at": 1791111877.020129,
- "generated_iso": "2026-10-04T11:04:37Z",
- "run_seconds": 138.6,
+ "generated_at": 1791112436.671212,
+ "generated_iso": "2026-10-04T11:13:56Z",
+ "run_seconds": 135.8,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 553,
-  "waves_found": 170,
-  "waves_on_cooldown": 1,
-  "window_minutes": 40.34914999802907
+  "distinct_tickers": 516,
+  "waves_found": 165,
+  "waves_on_cooldown": 2,
+  "window_minutes": 35.85
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1791111877.0202181,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "ㅤㅤㅤ",
-   "mint": "DMYA7GexqPCeZeFxjDRjAgPbut24K3DhUAXcMH48JHoX",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "one wallet spamming",
-   "reason": "1 wallet(s) minted all 20 copies - that is one person, not a crowd",
-   "at": 1791111753.296007,
-   "cap_usd": 10561.03761195085,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 2.130362221910446,
-   "clones": 20
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6666,
   "first_at": 1787816075.96651,
