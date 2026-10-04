@@ -1,7 +1,7 @@
 {
- "generated_at": 1791114637.858921,
- "generated_iso": "2026-10-04T11:50:37Z",
- "run_seconds": 129.9,
+ "generated_at": 1791115194.658325,
+ "generated_iso": "2026-10-04T11:59:54Z",
+ "run_seconds": 133.7,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,29 +9,46 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 521,
-  "waves_found": 163,
-  "waves_on_cooldown": 2,
-  "window_minutes": 33.5
+  "distinct_tickers": 524,
+  "waves_found": 157,
+  "waves_on_cooldown": 1,
+  "window_minutes": 35.416666666666664
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1791111877.0202181,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1791115194.658373,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CAP",
+   "mint": "B4Jbtzs8pnqY4yZRTB8SLmXXg3y9wpbhyStoiv64fNqJ",
+   "rule": "R0",
+   "agent": "WARDEN",
+   "code": "counterparty unknown",
+   "reason": "holders of $CAP could not be read - an unknown counterparty is refused like a missing one",
+   "at": 1791115082.001596,
+   "cap_usd": 13336.95562212,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 1.8058334438061272,
+   "clones": 9
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6666,
+  "refusals_recorded": 6667,
   "first_at": 1787816075.96651,
-  "last_at": 1791111753.296007,
+  "last_at": 1791115082.001596,
   "by_code": {
    "wave too thin": 4927,
    "too young to be dead": 730,
@@ -46,7 +63,7 @@
    "book is full": 12,
    "already ruled": 4,
    "wave is over": 3,
-   "counterparty unknown": 1
+   "counterparty unknown": 2
   },
   "path": "data/refusals.jsonl"
  },
