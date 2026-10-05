@@ -1,7 +1,7 @@
 {
- "generated_at": 1791225153.360617,
- "generated_iso": "2026-10-05T18:32:33Z",
- "run_seconds": 115.7,
+ "generated_at": 1791225700.995575,
+ "generated_iso": "2026-10-05T18:41:40Z",
+ "run_seconds": 124.2,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,29 +9,46 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 556,
-  "waves_found": 144,
+  "distinct_tickers": 537,
+  "waves_found": 143,
   "waves_on_cooldown": 1,
-  "window_minutes": 22.15
+  "window_minutes": 21.516666666666666
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1791223532.849131,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1791225700.995657,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "AF",
+   "mint": "aHnwePNBNHQzWa7ETwVcTzsDiP7me9sMx1WAKQ2fc8R",
+   "rule": "R0",
+   "agent": "WARDEN",
+   "code": "counterparty unknown",
+   "reason": "holders of $AF could not be read - an unknown counterparty is refused like a missing one",
+   "at": 1791225601.3216121,
+   "cap_usd": 8656.926262735054,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 9.939968999803618,
+   "clones": 9
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6679,
+  "refusals_recorded": 6680,
   "first_at": 1787816075.96651,
-  "last_at": 1791223457.978266,
+  "last_at": 1791225601.3216121,
   "by_code": {
    "wave too thin": 4938,
    "too young to be dead": 730,
@@ -46,7 +63,7 @@
    "book is full": 12,
    "already ruled": 4,
    "wave is over": 3,
-   "counterparty unknown": 2
+   "counterparty unknown": 3
   },
   "path": "data/refusals.jsonl"
  },
