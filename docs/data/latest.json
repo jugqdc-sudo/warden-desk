@@ -1,7 +1,7 @@
 {
- "generated_at": 1791205850.937081,
- "generated_iso": "2026-10-05T13:10:50Z",
- "run_seconds": 110.6,
+ "generated_at": 1791206395.6296651,
+ "generated_iso": "2026-10-05T13:19:55Z",
+ "run_seconds": 121.2,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,36 +9,53 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 487,
-  "waves_found": 129,
-  "waves_on_cooldown": 4,
-  "window_minutes": 28.0
+  "distinct_tickers": 540,
+  "waves_found": 130,
+  "waves_on_cooldown": 2,
+  "window_minutes": 30.566666666666666
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1791204259.2040598,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1791206395.629729,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "KWIF",
+   "mint": "6Rwcmkz9yiYVM5EzyMcr4JsQPGEAWhcUvLvfBperYnUt",
+   "rule": "R1",
+   "agent": "GRAVEYARD",
+   "code": "still alive",
+   "reason": "cap $297,439 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1791206307.540202,
+   "cap_usd": 297438.6660682,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.0001295959507977521,
+   "clones": 5
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6676,
+  "refusals_recorded": 6677,
   "first_at": 1787816075.96651,
-  "last_at": 1791204218.6085079,
+  "last_at": 1791206307.540202,
   "by_code": {
    "wave too thin": 4936,
    "too young to be dead": 730,
    "no counterparty": 576,
    "below the floor": 135,
    "one wallet spamming": 79,
-   "still alive": 57,
+   "still alive": 58,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
