@@ -1,7 +1,7 @@
 {
- "generated_at": 1791391564.99841,
- "generated_iso": "2026-10-07T16:46:04Z",
- "run_seconds": 140.5,
+ "generated_at": 1791392153.714016,
+ "generated_iso": "2026-10-07T16:55:53Z",
+ "run_seconds": 165.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,35 +9,52 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 566,
-  "waves_found": 141,
-  "waves_on_cooldown": 2,
-  "window_minutes": 21.266666666666666
+  "distinct_tickers": 558,
+  "waves_found": 144,
+  "waves_on_cooldown": 0,
+  "window_minutes": 20.933333333333334
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1791385465.148874,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1791392153.714359,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "PUMP",
+   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "one wallet spamming",
+   "reason": "2 wallet(s) minted all 21 copies - that is one person, not a crowd",
+   "at": 1791392045.51028,
+   "cap_usd": 6051.531014497252,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.8099827492485444,
+   "clones": 21
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6698,
+  "refusals_recorded": 6699,
   "first_at": 1787816075.96651,
-  "last_at": 1791385405.478682,
+  "last_at": 1791392045.51028,
   "by_code": {
    "wave too thin": 4955,
    "too young to be dead": 730,
    "no counterparty": 576,
    "below the floor": 135,
-   "one wallet spamming": 79,
+   "one wallet spamming": 80,
    "still alive": 59,
    "size moves it": 40,
    "exit is one wallet": 40,
