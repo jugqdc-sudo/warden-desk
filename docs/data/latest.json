@@ -1,7 +1,7 @@
 {
- "generated_at": 1791342960.301186,
- "generated_iso": "2026-10-07T03:16:00Z",
- "run_seconds": 158.6,
+ "generated_at": 1791343525.368608,
+ "generated_iso": "2026-10-07T03:25:25Z",
+ "run_seconds": 141.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 588,
+  "distinct_tickers": 580,
   "waves_found": 183,
-  "waves_on_cooldown": 2,
-  "window_minutes": 32.93333333333333
+  "waves_on_cooldown": 3,
+  "window_minutes": 33.56666666666667
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1791342960.301281,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "KWIF",
-   "mint": "6Rwcmkz9yiYVM5EzyMcr4JsQPGEAWhcUvLvfBperYnUt",
-   "rule": "R1",
-   "agent": "GRAVEYARD",
-   "code": "still alive",
-   "reason": "cap $294,052 is above the $60,000 ceiling - this coin is still trading, not buried",
-   "at": 1791342899.640285,
-   "cap_usd": 294051.8895624,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 0.00039144767379319226,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6693,
   "first_at": 1787816075.96651,
