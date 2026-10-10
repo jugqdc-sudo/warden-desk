@@ -1,7 +1,7 @@
 {
- "generated_at": 1791608801.030155,
- "generated_iso": "2026-10-10T05:06:41Z",
- "run_seconds": 137.5,
+ "generated_at": 1791609356.866984,
+ "generated_iso": "2026-10-10T05:15:56Z",
+ "run_seconds": 131.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 497,
-  "waves_found": 174,
-  "waves_on_cooldown": 2,
-  "window_minutes": 36.166666666666664
+  "distinct_tickers": 526,
+  "waves_found": 171,
+  "waves_on_cooldown": 3,
+  "window_minutes": 38.78333333333333
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1791608801.030186,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "PEPE",
-   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $PEPE - a wave starts at 8",
-   "at": 1791608739.2061791,
-   "cap_usd": 6579.58993092,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 0.06257646354260268,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6725,
   "first_at": 1787816075.96651,
