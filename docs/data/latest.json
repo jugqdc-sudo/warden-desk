@@ -1,7 +1,7 @@
 {
- "generated_at": 1791750791.8096662,
- "generated_iso": "2026-10-11T20:33:11Z",
- "run_seconds": 108.7,
+ "generated_at": 1791751329.812466,
+ "generated_iso": "2026-10-11T20:42:09Z",
+ "run_seconds": 114.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 534,
-  "waves_found": 139,
-  "waves_on_cooldown": 0,
-  "window_minutes": 26.816666666666666
+  "distinct_tickers": 520,
+  "waves_found": 145,
+  "waves_on_cooldown": 2,
+  "window_minutes": 28.6
  },
  "session": {
   "candidates": 1,
@@ -21,7 +21,7 @@
   "refusal_rate": 1.0
  },
  "last_ruling": {
-  "at": 1791750791.8097541,
+  "at": 1791751329.8125281,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
@@ -30,32 +30,32 @@
  "verdicts": [
   {
    "verdict": "DENY",
-   "ticker": "NA",
-   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "ticker": "KWIF",
+   "mint": "6Rwcmkz9yiYVM5EzyMcr4JsQPGEAWhcUvLvfBperYnUt",
    "rule": "R1",
    "agent": "GRAVEYARD",
    "code": "still alive",
-   "reason": "cap $78,824 is above the $60,000 ceiling - this coin is still trading, not buried",
-   "at": 1791750739.5902011,
-   "cap_usd": 78824.27111030366,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 1.0,
-   "silence_days": 0.0007128481842853404,
-   "clones": 2
+   "reason": "cap $264,169 is above the $60,000 ceiling - this coin is still trading, not buried",
+   "at": 1791751261.475796,
+   "cap_usd": 264168.5674524,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.0032397879135829433,
+   "clones": 3
   }
  ],
  "ledger": {
-  "refusals_recorded": 6742,
+  "refusals_recorded": 6743,
   "first_at": 1787816075.96651,
-  "last_at": 1791750739.5902011,
+  "last_at": 1791751261.475796,
   "by_code": {
    "wave too thin": 4992,
    "too young to be dead": 730,
    "no counterparty": 576,
    "below the floor": 135,
    "one wallet spamming": 82,
-   "still alive": 63,
+   "still alive": 64,
    "size moves it": 40,
    "exit is one wallet": 40,
    "nothing to collect": 34,
