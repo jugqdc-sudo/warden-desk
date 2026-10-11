@@ -1,7 +1,7 @@
 {
- "generated_at": 1791735666.645157,
- "generated_iso": "2026-10-11T16:21:06Z",
- "run_seconds": 111.3,
+ "generated_at": 1791736211.071689,
+ "generated_iso": "2026-10-11T16:30:11Z",
+ "run_seconds": 119.5,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 572,
-  "waves_found": 144,
-  "waves_on_cooldown": 0,
-  "window_minutes": 29.216666666666665
+  "distinct_tickers": 578,
+  "waves_found": 149,
+  "waves_on_cooldown": 2,
+  "window_minutes": 30.0
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1791735666.645544,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "LETSGO",
-   "mint": "7GF4v9SAd2Xm5sNJaDVKhfDDqFG5KuLgS6avhzfxPDUE",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $LETSGO - a wave starts at 8",
-   "at": 1791735654.8567228,
-   "cap_usd": 7266.807719429753,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 0.6538987711789431,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6739,
   "first_at": 1787816075.96651,
