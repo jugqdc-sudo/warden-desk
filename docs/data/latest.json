@@ -1,7 +1,7 @@
 {
- "generated_at": 1792705085.455734,
- "generated_iso": "2026-10-22T21:38:05Z",
- "run_seconds": 146.2,
+ "generated_at": 1792705647.897511,
+ "generated_iso": "2026-10-22T21:47:27Z",
+ "run_seconds": 138.1,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 462,
+  "distinct_tickers": 489,
   "waves_found": 163,
-  "waves_on_cooldown": 2,
-  "window_minutes": 26.733333333333334
+  "waves_on_cooldown": 3,
+  "window_minutes": 27.416666666666668
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1792705085.4558,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "SHREK",
-   "mint": "2784oaEfz4nRg7vmkwYcTRWWkit6DQacRCoi74hY4jbh",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $SHREK - a wave starts at 8",
-   "at": 1792705058.5049548,
-   "cap_usd": 36105.34152316,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 2.0845428802431734,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6835,
   "first_at": 1787816075.96651,
