@@ -1,7 +1,7 @@
 {
- "generated_at": 1792693531.51912,
- "generated_iso": "2026-10-22T18:25:31Z",
- "run_seconds": 1618.7,
+ "generated_at": 1792695530.334738,
+ "generated_iso": "2026-10-22T18:58:50Z",
+ "run_seconds": 1571.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,80 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 386,
-  "waves_found": 152,
-  "waves_on_cooldown": 1,
-  "window_minutes": 19.0
+  "distinct_tickers": 463,
+  "waves_found": 202,
+  "waves_on_cooldown": 0,
+  "window_minutes": 21.766666666666666
  },
  "session": {
-  "candidates": 0,
+  "candidates": 3,
   "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1792666196.4319549,
-  "candidates": 1,
-  "cleared": 0,
-  "denied": 1,
+  "denied": 3,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1792695530.3350668,
+  "candidates": 3,
+  "cleared": 0,
+  "denied": 3,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CAP",
+   "mint": "B4Jbtzs8pnqY4yZRTB8SLmXXg3y9wpbhyStoiv64fNqJ",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $CAP - a wave starts at 8",
+   "at": 1792694831.585574,
+   "cap_usd": 10627.730880359999,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 2.2913840915400674,
+   "clones": 2
+  },
+  {
+   "verdict": "DENY",
+   "ticker": "PUMP",
+   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "3 copies of $PUMP - a wave starts at 8",
+   "at": 1792694640.63997,
+   "cap_usd": 5188.269986541844,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 2.22027361019618,
+   "clones": 3
+  },
+  {
+   "verdict": "DENY",
+   "ticker": "YODA",
+   "mint": "CMshUguMTC1teYSX3tQmDupURbxkTDGQJjKKju8foXHg",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "4 copies of $YODA - a wave starts at 8",
+   "at": 1792694584.049713,
+   "cap_usd": 8791.9194704,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 5.127801500809965,
+   "clones": 4
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6829,
+  "refusals_recorded": 6832,
   "first_at": 1787816075.96651,
-  "last_at": 1792665737.950094,
+  "last_at": 1792694831.585574,
   "by_code": {
-   "wave too thin": 5069,
+   "wave too thin": 5072,
    "too young to be dead": 730,
    "no counterparty": 579,
    "below the floor": 135,
