@@ -1,7 +1,7 @@
 {
- "generated_at": 1792695530.334738,
- "generated_iso": "2026-10-22T18:58:50Z",
- "run_seconds": 1571.9,
+ "generated_at": 1792696711.76202,
+ "generated_iso": "2026-10-22T19:18:31Z",
+ "run_seconds": 754.0,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 463,
-  "waves_found": 202,
-  "waves_on_cooldown": 0,
-  "window_minutes": 21.766666666666666
+  "distinct_tickers": 430,
+  "waves_found": 181,
+  "waves_on_cooldown": 1,
+  "window_minutes": 21.283333333333335
  },
  "session": {
-  "candidates": 3,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 3,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1792695530.3350668,
@@ -27,56 +27,7 @@
   "denied": 3,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "CAP",
-   "mint": "B4Jbtzs8pnqY4yZRTB8SLmXXg3y9wpbhyStoiv64fNqJ",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $CAP - a wave starts at 8",
-   "at": 1792694831.585574,
-   "cap_usd": 10627.730880359999,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 2.2913840915400674,
-   "clones": 2
-  },
-  {
-   "verdict": "DENY",
-   "ticker": "PUMP",
-   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "3 copies of $PUMP - a wave starts at 8",
-   "at": 1792694640.63997,
-   "cap_usd": 5188.269986541844,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 2.22027361019618,
-   "clones": 3
-  },
-  {
-   "verdict": "DENY",
-   "ticker": "YODA",
-   "mint": "CMshUguMTC1teYSX3tQmDupURbxkTDGQJjKKju8foXHg",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "4 copies of $YODA - a wave starts at 8",
-   "at": 1792694584.049713,
-   "cap_usd": 8791.9194704,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 5.127801500809965,
-   "clones": 4
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6832,
   "first_at": 1787816075.96651,
