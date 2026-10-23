@@ -1,7 +1,7 @@
 {
- "generated_at": 1792785490.0257869,
- "generated_iso": "2026-10-23T19:58:10Z",
- "run_seconds": 478.4,
+ "generated_at": 1792786386.113014,
+ "generated_iso": "2026-10-23T20:13:06Z",
+ "run_seconds": 470.0,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 441,
-  "waves_found": 164,
+  "distinct_tickers": 474,
+  "waves_found": 158,
   "waves_on_cooldown": 1,
-  "window_minutes": 20.95
+  "window_minutes": 21.366666666666667
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1792785490.025812,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "POG",
-   "mint": "ELhWghTdJpCJaewVrkid4nVcGJ7XfzxE5KSmnjExa4t5",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $POG - a wave starts at 8",
-   "at": 1792785438.4924202,
-   "cap_usd": 6102.989052519415,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 1.3175056987724922,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6845,
   "first_at": 1787816075.96651,
