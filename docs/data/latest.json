@@ -1,7 +1,7 @@
 {
- "generated_at": 1792879737.903557,
- "generated_iso": "2026-10-24T22:08:57Z",
- "run_seconds": 413.8,
+ "generated_at": 1792880528.8070989,
+ "generated_iso": "2026-10-24T22:22:08Z",
+ "run_seconds": 364.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 520,
-  "waves_found": 168,
-  "waves_on_cooldown": 0,
-  "window_minutes": 30.7
+  "distinct_tickers": 527,
+  "waves_found": 180,
+  "waves_on_cooldown": 2,
+  "window_minutes": 29.416666666666668
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1792879737.903593,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "YODA",
-   "mint": "CMshUguMTC1teYSX3tQmDupURbxkTDGQJjKKju8foXHg",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "4 copies of $YODA - a wave starts at 8",
-   "at": 1792879435.756635,
-   "cap_usd": 8670.240216914697,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 0.6633073675356529,
-   "clones": 4
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6855,
   "first_at": 1787816075.96651,
