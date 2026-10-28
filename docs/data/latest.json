@@ -1,7 +1,7 @@
 {
- "generated_at": 1793192408.5071979,
- "generated_iso": "2026-10-28T13:00:08Z",
- "run_seconds": 377.2,
+ "generated_at": 1793193048.243544,
+ "generated_iso": "2026-10-28T13:10:48Z",
+ "run_seconds": 214.4,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 518,
-  "waves_found": 172,
-  "waves_on_cooldown": 1,
-  "window_minutes": 42.61666666666667
+  "distinct_tickers": 508,
+  "waves_found": 183,
+  "waves_on_cooldown": 2,
+  "window_minutes": 42.11666666666667
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1793192408.5072262,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "PEPEWIFHAT",
-   "mint": "XEXNLnM1xp96zS8rAAXTUZjeddzPKgeTcCQtLfriKSE",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $PEPEWIFHAT - a wave starts at 8",
-   "at": 1793192362.3360798,
-   "cap_usd": 7681.934729814679,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 11.46531638385521,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6886,
   "first_at": 1787816075.96651,
