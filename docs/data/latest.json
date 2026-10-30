@@ -1,7 +1,7 @@
 {
- "generated_at": 1793329849.649289,
- "generated_iso": "2026-10-30T03:10:49Z",
- "run_seconds": 166.7,
+ "generated_at": 1793330415.9482481,
+ "generated_iso": "2026-10-30T03:20:15Z",
+ "run_seconds": 142.2,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 432,
-  "waves_found": 180,
-  "waves_on_cooldown": 3,
-  "window_minutes": 39.31666666666667
+  "distinct_tickers": 412,
+  "waves_found": 168,
+  "waves_on_cooldown": 4,
+  "window_minutes": 33.733333333333334
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1793329849.64939,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "IRIS",
-   "mint": "CcqND4YtwSqDDTkF4Y3TTWauVC28iJxFYaJiaJtpE5xd",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $IRIS - a wave starts at 8",
-   "at": 1793329829.7289522,
-   "cap_usd": 5705.696499830695,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 8.09469593628413,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6907,
   "first_at": 1787816075.96651,
