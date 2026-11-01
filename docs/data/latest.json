@@ -1,7 +1,7 @@
 {
- "generated_at": 1793566266.650302,
- "generated_iso": "2026-11-01T20:51:06Z",
- "run_seconds": 112.2,
+ "generated_at": 1793566812.210496,
+ "generated_iso": "2026-11-01T21:00:12Z",
+ "run_seconds": 122.3,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,48 @@
  },
  "seen": {
   "launches_pulled": 1050,
-  "distinct_tickers": 425,
-  "waves_found": 131,
-  "waves_on_cooldown": 3,
-  "window_minutes": 23.533333333333335
+  "distinct_tickers": 436,
+  "waves_found": 144,
+  "waves_on_cooldown": 2,
+  "window_minutes": 26.85
  },
  "session": {
-  "candidates": 0,
-  "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1793565186.458988,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1793566812.2105632,
+  "candidates": 1,
+  "cleared": 0,
+  "denied": 1,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "YODA",
+   "mint": "CMshUguMTC1teYSX3tQmDupURbxkTDGQJjKKju8foXHg",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $YODA - a wave starts at 8",
+   "at": 1793566762.0927548,
+   "cap_usd": 8667.958655322205,
+   "holders": null,
+   "holders_exact": true,
+   "top10_share": null,
+   "silence_days": 0.001633017408075156,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6936,
+  "refusals_recorded": 6937,
   "first_at": 1787816075.96651,
-  "last_at": 1793565142.4055738,
+  "last_at": 1793566762.0927548,
   "by_code": {
-   "wave too thin": 5165,
+   "wave too thin": 5166,
    "too young to be dead": 730,
    "no counterparty": 580,
    "below the floor": 135,
