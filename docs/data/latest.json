@@ -1,7 +1,7 @@
 {
- "generated_at": 1795453652.9626849,
- "generated_iso": "2026-11-23T17:07:32Z",
- "run_seconds": 177.4,
+ "generated_at": 1795454305.986825,
+ "generated_iso": "2026-11-23T17:18:25Z",
+ "run_seconds": 228.9,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,31 +9,64 @@
  },
  "seen": {
   "launches_pulled": 1047,
-  "distinct_tickers": 408,
-  "waves_found": 167,
-  "waves_on_cooldown": 3,
-  "window_minutes": 23.466666666666665
+  "distinct_tickers": 421,
+  "waves_found": 193,
+  "waves_on_cooldown": 1,
+  "window_minutes": 22.633333333333333
  },
  "session": {
-  "candidates": 0,
+  "candidates": 2,
   "cleared": 0,
-  "denied": 0,
-  "refusal_rate": 0.0
- },
- "last_ruling": {
-  "at": 1795453048.567404,
-  "candidates": 1,
-  "cleared": 0,
-  "denied": 1,
+  "denied": 2,
   "refusal_rate": 1.0
  },
- "verdicts": [],
+ "last_ruling": {
+  "at": 1795454305.98688,
+  "candidates": 2,
+  "cleared": 0,
+  "denied": 2,
+  "refusal_rate": 1.0
+ },
+ "verdicts": [
+  {
+   "verdict": "DENY",
+   "ticker": "CHINA",
+   "mint": "AxV34kxdoBUDSkBYX49WqfegezAg4UUT1Pe3PqsnCZbR",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $CHINA - a wave starts at 8",
+   "at": 1795454285.3614368,
+   "cap_usd": 5739.30642520961,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 1.0,
+   "silence_days": 3.1134416831588303,
+   "clones": 2
+  },
+  {
+   "verdict": "DENY",
+   "ticker": "NA",
+   "mint": "7AJ1KjzjstMnQGzZk1HAKx2atmvvRqWvmRbdYmnviryq",
+   "rule": "R2",
+   "agent": "MIDWIFE",
+   "code": "wave too thin",
+   "reason": "2 copies of $NA - a wave starts at 8",
+   "at": 1795454216.25212,
+   "cap_usd": 40330.56523683418,
+   "holders": 20,
+   "holders_exact": false,
+   "top10_share": 0.5687679864833489,
+   "silence_days": 0.8107783796776225,
+   "clones": 2
+  }
+ ],
  "ledger": {
-  "refusals_recorded": 6961,
+  "refusals_recorded": 6963,
   "first_at": 1787816075.96651,
-  "last_at": 1795452959.909842,
+  "last_at": 1795454285.3614368,
   "by_code": {
-   "wave too thin": 5189,
+   "wave too thin": 5191,
    "too young to be dead": 730,
    "no counterparty": 581,
    "below the floor": 135,
