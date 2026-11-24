@@ -1,6 +1,6 @@
 {
- "generated_at": 1795505706.067292,
- "generated_iso": "2026-11-24T07:35:06Z",
+ "generated_at": 1795506297.971457,
+ "generated_iso": "2026-11-24T07:44:57Z",
  "run_seconds": 168.0,
  "rules_version": "1.0.0",
  "sources": {
@@ -9,10 +9,10 @@
  },
  "seen": {
   "launches_pulled": 1046,
-  "distinct_tickers": 478,
-  "waves_found": 162,
+  "distinct_tickers": 477,
+  "waves_found": 163,
   "waves_on_cooldown": 2,
-  "window_minutes": 54.916666666666664
+  "window_minutes": 56.233333333333334
  },
  "session": {
   "candidates": 0,
