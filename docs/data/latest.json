@@ -1,24 +1,24 @@
 {
- "generated_at": 1795629612.181296,
- "generated_iso": "2026-11-25T18:00:12Z",
- "run_seconds": 189.4,
+ "generated_at": 1795630228.092619,
+ "generated_iso": "2026-11-25T18:10:28Z",
+ "run_seconds": 189.6,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
   "holders": "rpc node"
  },
  "seen": {
-  "launches_pulled": 1045,
-  "distinct_tickers": 478,
-  "waves_found": 172,
-  "waves_on_cooldown": 2,
-  "window_minutes": 27.316666666666666
+  "launches_pulled": 1046,
+  "distinct_tickers": 445,
+  "waves_found": 177,
+  "waves_on_cooldown": 3,
+  "window_minutes": 27.983333333333334
  },
  "session": {
-  "candidates": 1,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 1,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1795629612.181368,
@@ -27,24 +27,7 @@
   "denied": 1,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "CHINA",
-   "mint": "AxV34kxdoBUDSkBYX49WqfegezAg4UUT1Pe3PqsnCZbR",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $CHINA - a wave starts at 8",
-   "at": 1795629540.80634,
-   "cap_usd": 5739.30642520961,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 1.0,
-   "silence_days": 5.141861183886175,
-   "clones": 2
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 6980,
   "first_at": 1787816075.96651,
