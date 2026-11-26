@@ -1,18 +1,18 @@
 {
- "generated_at": 1795665285.4362721,
- "generated_iso": "2026-11-26T03:54:45Z",
- "run_seconds": 173.9,
+ "generated_at": 1795665887.9256918,
+ "generated_iso": "2026-11-26T04:04:47Z",
+ "run_seconds": 177.6,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
   "holders": "rpc node"
  },
  "seen": {
-  "launches_pulled": 1050,
-  "distinct_tickers": 509,
-  "waves_found": 159,
+  "launches_pulled": 1049,
+  "distinct_tickers": 508,
+  "waves_found": 165,
   "waves_on_cooldown": 2,
-  "window_minutes": 42.666666666666664
+  "window_minutes": 45.25
  },
  "session": {
   "candidates": 1,
@@ -21,7 +21,7 @@
   "refusal_rate": 1.0
  },
  "last_ruling": {
-  "at": 1795665285.436322,
+  "at": 1795665887.92575,
   "candidates": 1,
   "cleared": 0,
   "denied": 1,
@@ -30,27 +30,27 @@
  "verdicts": [
   {
    "verdict": "DENY",
-   "ticker": "PUMP",
-   "mint": "13SRX8KnxKuJkofNkmLsCRd1gbQ6LyqpEbDCBMhYufi3",
+   "ticker": "PEPE",
+   "mint": "5DAmtkPCQipf4JASgSLGgDiepPaZNe35iBSCyHZi3uR7",
    "rule": "R2",
    "agent": "MIDWIFE",
    "code": "wave too thin",
-   "reason": "2 copies of $PUMP - a wave starts at 8",
-   "at": 1795665220.871517,
-   "cap_usd": 5054.813794136393,
+   "reason": "2 copies of $PEPE - a wave starts at 8",
+   "at": 1795665858.995272,
+   "cap_usd": 4210.065292326114,
    "holders": 20,
    "holders_exact": false,
-   "top10_share": 0.9345167014160842,
-   "silence_days": 31.369975363739112,
+   "top10_share": 1.0,
+   "silence_days": 2.3041550365393912,
    "clones": 2
   }
  ],
  "ledger": {
-  "refusals_recorded": 6986,
+  "refusals_recorded": 6987,
   "first_at": 1787816075.96651,
-  "last_at": 1795665220.871517,
+  "last_at": 1795665858.995272,
   "by_code": {
-   "wave too thin": 5212,
+   "wave too thin": 5213,
    "too young to be dead": 730,
    "no counterparty": 583,
    "below the floor": 135,
