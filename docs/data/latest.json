@@ -1,7 +1,7 @@
 {
- "generated_at": 1795880332.5259368,
- "generated_iso": "2026-11-28T15:38:52Z",
- "run_seconds": 199.7,
+ "generated_at": 1795880940.3952131,
+ "generated_iso": "2026-11-28T15:49:00Z",
+ "run_seconds": 182.8,
  "rules_version": "1.0.0",
  "sources": {
   "launches": "pump.fun public API, read only",
@@ -9,16 +9,16 @@
  },
  "seen": {
   "launches_pulled": 1047,
-  "distinct_tickers": 544,
-  "waves_found": 190,
-  "waves_on_cooldown": 2,
-  "window_minutes": 39.4
+  "distinct_tickers": 549,
+  "waves_found": 174,
+  "waves_on_cooldown": 4,
+  "window_minutes": 40.0
  },
  "session": {
-  "candidates": 2,
+  "candidates": 0,
   "cleared": 0,
-  "denied": 2,
-  "refusal_rate": 1.0
+  "denied": 0,
+  "refusal_rate": 0.0
  },
  "last_ruling": {
   "at": 1795880332.525972,
@@ -27,40 +27,7 @@
   "denied": 2,
   "refusal_rate": 1.0
  },
- "verdicts": [
-  {
-   "verdict": "DENY",
-   "ticker": "HAT",
-   "mint": "GtuDCaVmL3B2F4MSUUep5qxgDazUzUkab6Mw4iWeZGyM",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "2 copies of $HAT - a wave starts at 8",
-   "at": 1795880259.393375,
-   "cap_usd": 5863.656272585361,
-   "holders": null,
-   "holders_exact": true,
-   "top10_share": null,
-   "silence_days": 27.46141658972259,
-   "clones": 2
-  },
-  {
-   "verdict": "DENY",
-   "ticker": "RABBIT",
-   "mint": "J4HDaxbkogUnbrYWPDa3oo3cTXAN8HhkHLp9CWcrPHk8",
-   "rule": "R2",
-   "agent": "MIDWIFE",
-   "code": "wave too thin",
-   "reason": "6 copies of $RABBIT - a wave starts at 8",
-   "at": 1795880172.8029451,
-   "cap_usd": 2787.890243572391,
-   "holders": 20,
-   "holders_exact": false,
-   "top10_share": 0.9999717411085459,
-   "silence_days": 1.064824107973664,
-   "clones": 6
-  }
- ],
+ "verdicts": [],
  "ledger": {
   "refusals_recorded": 7003,
   "first_at": 1787816075.96651,
